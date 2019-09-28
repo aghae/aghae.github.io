@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <meta name="keywords" content="Javascript,nodejs,vue,serverless">
+
+
+<title>git cheatsheet | aghe blog</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Aghae</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Aghae</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">git cheatsheet</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">aghae</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">September 28, 2019&nbsp;&nbsp;13:10:43</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/cheatsheet/">cheatsheet</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <style>
+  /*__Table__*/
+  table thead { text-align: left }
+  @media screen and (max-width:600px) {
+      table thead { display: none }
+      table tr{display:block;border: 1px solid #ddd;margin-bottom:.5rem}
+      table td{display:block;text-align: right;}
+      td,th{
+          padding:1em;
+          text-align:left;
+      }
+      table td::before {
+          /* content:  attr(data-label); */
+          float: left;
+          /* font-weight: bold; */
+          /* text-transform: uppercase; */
+      }
+      table td:nth-child(1) {
+          background-color: #bfdeff;
+      }
+      table td:nth-child(1)::before {
+          content: 'command:';
+      }
+       table td:nth-child(2)::before {
+          content: 'description:'
+      }
+  }
+
+</style>
+
+<h2 id="Terminology"><a href="#Terminology" class="headerlink" title="Terminology"></a>Terminology</h2><table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>repo</td>
+<td>A place where the history of your work/code is stored</td>
+</tr>
+<tr>
+<td>clone</td>
+<td>Copy a git repository so you can add to it</td>
+</tr>
+<tr>
+<td>fork (GitHub)</td>
+<td>Create your own server side copy of someone else’s repo</td>
+</tr>
+<tr>
+<td>commit</td>
+<td>A state of your project at a certain time</td>
+</tr>
+<tr>
+<td>branch</td>
+<td>A different line of development. A branch is just a “label” which points to a specific commit</td>
+</tr>
+<tr>
+<td>master</td>
+<td>The default branch we develop in</td>
+</tr>
+<tr>
+<td>origin</td>
+<td>The default upstream repo (Github)</td>
+</tr>
+<tr>
+<td>HEAD</td>
+<td>The current branch</td>
+</tr>
+<tr>
+<td>remote</td>
+<td>A repository stored on another computer</td>
+</tr>
+</tbody></table>
+<h2 id="Starting-a-repo"><a href="#Starting-a-repo" class="headerlink" title="Starting a repo"></a>Starting a repo</h2><table>
+<thead>
+<tr>
+<th><div style="width:250px">Command</div></th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>git init</td>
+<td>Create a repo from existing data</td>
+</tr>
+<tr>
+<td>git clone &lt;repo url&gt;</td>
+<td>Clone a current repo (into a folder with same name as repo)</td>
+</tr>
+<tr>
+<td>git clone &lt;repo url&gt;</td>
+<td>&lt;folder name&gt;    Clone a repo into a specific folder name</td>
+</tr>
+<tr>
+<td>git clone &lt;repo url&gt;</td>
+<td>.    Clone a repo into current directory (should be an empty directory)</td>
+</tr>
+<tr>
+<td>git remote add origin <br>ht<span>tp//github.com/username/&lt;repo name&gt;.git</span></td>
+<td>Create a remote repo named origin pointing at your Github repo (after you’ve already created the repo on Github) (used if you git init since the repo you created locally isn’t linked to a remote repo yet)</td>
+</tr>
+<tr>
+<td>git remote add origin <br>git@github.com:username/&lt;repo name&gt;.git</td>
+<td>Create a remote repo named origin pointing at your Github repo (using SSH url instead of HTTP url)</td>
+</tr>
+<tr>
+<td>git remote</td>
+<td>Show the names of the remote repositories you’ve set up</td>
+</tr>
+<tr>
+<td>git remote -v</td>
+<td>Show the names and URLs of the remote repositories</td>
+</tr>
+<tr>
+<td>git remote rm &lt;remote name&gt;</td>
+<td>Remove a remote repository</td>
+</tr>
+</tbody></table>
+<h2 id="Showing-Undoing-Changes"><a href="#Showing-Undoing-Changes" class="headerlink" title="Showing/Undoing Changes"></a>Showing/Undoing Changes</h2><table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>git status</td>
+<td>Show the files changed</td>
+</tr>
+<tr>
+<td>git diff</td>
+<td>Show changes to files compared to last commit</td>
+</tr>
+<tr>
+<td>git diff &lt;filename&gt;</td>
+<td>Show changes in single file compared to last commit</td>
+</tr>
+<tr>
+<td>git diff &lt;commit id &gt; &lt;commit id 2&gt;</td>
+<td>Show changes between two different commits.</td>
+</tr>
+<tr>
+<td>git log</td>
+<td>Show history of changes</td>
+</tr>
+<tr>
+<td>git blame &lt;filename&gt;</td>
+<td>Show who changed each line of a file and when</td>
+</tr>
+<tr>
+<td>git reset -hard</td>
+<td>Go back to the last commit (will not delete new unstaged files)</td>
+</tr>
+<tr>
+<td>git revert HEAD</td>
+<td>Undo/revert last commit AND create a new commit</td>
+</tr>
+<tr>
+<td>git revert &lt;commit id&gt;</td>
+<td>Undo/revert a specific commit AND create a new commit</td>
+</tr>
+</tbody></table>
+<h2 id="Staging"><a href="#Staging" class="headerlink" title="Staging"></a>Staging</h2><table>
+<thead>
+<tr>
+<th><div style="width:200px">Command</div></th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>git add -A</td>
+<td>Stage all files (new, modified, and deleted)</td>
+</tr>
+<tr>
+<td>git add .</td>
+<td>Stage new and modified files (not deleted)</td>
+</tr>
+<tr>
+<td>git add -u</td>
+<td>Stage modified and deleted files (not new)</td>
+</tr>
+<tr>
+<td>git rm &lt;filename&gt;</td>
+<td>Remove a file and untrack it</td>
+</tr>
+<tr>
+<td>git rm &lt;filename&gt; -cached</td>
+<td>Untrack a file only. It will still exist. Usually you will add this file to .gitignore after rm</td>
+</tr>
+</tbody></table>
+<h2 id="Publishing"><a href="#Publishing" class="headerlink" title="Publishing"></a>Publishing</h2><table>
+<thead>
+<tr>
+<th><div style="width:300px">Command</div></th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>git commit -m “message”</td>
+<td>Commit the local changes that were staged</td>
+</tr>
+<tr>
+<td>git commit -am “message”</td>
+<td>Stage files (modified and deleted, not new) and commit</td>
+</tr>
+<tr>
+<td>git stash</td>
+<td>Take the uncommitted work (modified tracked files and staged changes) and saves it</td>
+</tr>
+<tr>
+<td>git stash list</td>
+<td>Show list of stashes</td>
+</tr>
+<tr>
+<td>git stash apply</td>
+<td>Reapply the latest stashed contents</td>
+</tr>
+<tr>
+<td>git stash apply &lt;stash id&gt;</td>
+<td>Reapply a specific stash. (stash id = stash@{2})</td>
+</tr>
+<tr>
+<td>git stash drop &lt;stash id&gt;</td>
+<td>Drop a specific stash</td>
+</tr>
+<tr>
+<td>git push</td>
+<td>Push your changes to the origin</td>
+</tr>
+<tr>
+<td>git push origin &lt;local branch name&gt;</td>
+<td>Push a branch to the origin</td>
+</tr>
+<tr>
+<td>git tag &lt;tag name&gt;</td>
+<td>Tag a version (ie v1.0). Useful for Github releases</td>
+</tr>
+</tbody></table>
+<h2 id="Updating-amp-Getting-Code"><a href="#Updating-amp-Getting-Code" class="headerlink" title="Updating &amp; Getting Code"></a>Updating &amp; Getting Code</h2><table>
+<thead>
+<tr>
+<th><div style="width:200px">Command</div></th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>git</td>
+<td>fetch</td>
+</tr>
+<tr>
+<td>git pull</td>
+<td>Get the latest changes from origin AND merge</td>
+</tr>
+<tr>
+<td>git checkout -b <new branch name> origin/<branch name></branch></new></td>
+<td>Get a remote branch from origin into a local branch (naming the branch and switching to it)</td>
+</tr>
+</tbody></table>
+<h2 id="Branching"><a href="#Branching" class="headerlink" title="Branching"></a>Branching</h2><table>
+<thead>
+<tr>
+<th><div style="width:300px">Command</div></th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>git branch</td>
+<td>Show all branches (local)</td>
+</tr>
+<tr>
+<td>git branch -a</td>
+<td>Show all branches (local and remote)</td>
+</tr>
+<tr>
+<td>git branch &lt;branch name&gt;</td>
+<td>Create a branch from HEAD</td>
+</tr>
+<tr>
+<td>git checkout -b &lt;branch name&gt;</td>
+<td>Create a new branch and switch to it</td>
+</tr>
+<tr>
+<td>git checkout &lt;branch name&gt;</td>
+<td>Switch to an already created branch</td>
+</tr>
+<tr>
+<td>git push origin &lt;branch name&gt;</td>
+<td>Push a branch up to the origin (Github)</td>
+</tr>
+<tr>
+<td>git checkout -b <new branch name> origin/&lt;branch name&gt;</new></td>
+<td>Get a remote branch from origin into a local branch (naming the branch and switching to it)</td>
+</tr>
+<tr>
+<td>git push origin -delete &lt;branch name&gt;</td>
+<td>Delete a branch locally and remotely</td>
+</tr>
+</tbody></table>
+<h2 id="Branching-Advanced"><a href="#Branching-Advanced" class="headerlink" title="Branching(Advanced)"></a>Branching(Advanced)</h2><table>
+<thead>
+<tr>
+<th><div style="width:200px">Command</div></th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>git checkout master <br>git merge &lt;branch name&gt;</td>
+<td>Merge a specific branch into the master branch.</td>
+</tr>
+<tr>
+<td>git rebase &lt;branch name&gt;</td>
+<td>Take all the changes in one branch and replay them on another. Usually used in a feature branch. Rebase the master to the feature branch so you are testing your feature on the latest main code base. Then merge to the master.</td>
+</tr>
+<tr>
+<td>git cherry-pick &lt;commit id&gt;</td>
+<td>Merge just one specific commit from another branch to your current branch.</td>
+</tr>
+</tbody></table>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();" rel="external nofollow noreferrer">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/post/howto-multi-lingual-site-with-Hexo/">howto  multi-lingual site with Hexo</a>
+            
+            
+            <a class="next" rel="next" href="/post/markdown cheatsheet/">markdown cheatsheet</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© aghae -2019</span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>

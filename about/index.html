@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <meta name="keywords" content="Javascript,nodejs,vue,serverless">
+
+
+<title>about | aghe blog</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Aghae</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Aghae</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    <article class="post-wrap page">
+        
+        <h2 class="post-title">about</h2>
+        
+        <section class="post-content">
+            <p>I am h.aghae ,<br>a fullstack web developer.</p>
+<p>Education:</p>
+<blockquote>
+<p>Math. &amp; Comptuer Science - University of Polytechnic , Iran</p>
+</blockquote>
+<p>contact:    </p>
+<blockquote>
+<p><a href="mailto:a.aghaee@gmail.com]" rel="noopener external nofollow noreferrer" target="_blank">Email</a>  ,  <a href="https://t.me/satorii" rel="noopener external nofollow noreferrer" target="_blank">Telegram</a>  ,  <a href="https://github.com/aghae" rel="noopener external nofollow noreferrer" target="_blank">GitHub</a></p>
+</blockquote>
+<p>Skills:</p>
+<blockquote>
+<p> Javascript(Esx,vue) ,Node(express) , python(django) ,php(lara)</p>
+</blockquote>
+<p>Experiences:</p>
+<ul>
+<li><p>2016 - present : Freelance</p>
+<ul>
+<li>messaging app (nodejs, socket io,mongodb,redis)</li>
+<li>shopping software (nodejs,express,mongo)</li>
+<li>standalone vue component </li>
+<li>webmaster (bash,nginx, other linux managments)</li>
+</ul>
+</li>
+<li><p>2014 - 2016 : senior developer &amp; webmaster</p>
+<ul>
+<li>online shopping</li>
+</ul>
+</li>
+<li><p>2013 - 2014 : senior developer</p>
+<ul>
+<li>real state </li>
+</ul>
+</li>
+<li><p>2012- 2013 : Web Manager &amp; Developer</p>
+<ul>
+<li>education system</li>
+<li>civilization projects</li>
+</ul>
+</li>
+<li><p>2010-2012 : Web Manager &amp; Developer</p>
+<ul>
+<li>Shopping web software</li>
+</ul>
+</li>
+<li><p>2003-2008 : Software &amp; Web Developer</p>
+<ul>
+<li>Library Software</li>
+<li>CMS &amp; Hosting</li>
+</ul>
+</li>
+<li><p>1998-2003 : software &amp; web Programmer</p>
+<ul>
+<li>News ageny web app ,Telephone logger</li>
+<li>accounting &amp; misc softwares</li>
+</ul>
+</li>
+</ul>
+
+        </section>
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© aghae -2019</span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>
