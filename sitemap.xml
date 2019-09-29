@@ -4,12 +4,12 @@
 
     <sitemap>
         <loc>http://localhost:4000/post-sitemap.xml</loc>
-        <lastmod>2019-09-28T14:08:55.914Z</lastmod>
+        <lastmod>2019-09-29T09:10:33.264Z</lastmod>
     </sitemap>
 
     <sitemap>
         <loc>http://localhost:4000/page-sitemap.xml</loc>
-        <lastmod>2019-09-28T13:07:39.673Z</lastmod>
+        <lastmod>2019-09-29T11:41:09.683Z</lastmod>
     </sitemap>
 
 </sitemapindex>

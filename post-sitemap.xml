@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>http://localhost:4000/post/server-contact-form/</loc>
+        <lastmod>2019-09-29T09:10:33.264Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://localhost:4000/post/markdown%20cheatsheet/</loc>
         <lastmod>2019-09-28T14:08:55.914Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -42,14 +50,6 @@
     <url>
         <loc>http://localhost:4000/post/simple-tunnel-with-linux-box/</loc>
         <lastmod>2019-09-28T11:17:15.449Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://localhost:4000/post/server-contact-form/</loc>
-        <lastmod>2019-09-28T10:50:25.835Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
