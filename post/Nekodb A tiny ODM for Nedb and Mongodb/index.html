@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="ko">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    
+    <title>Nekodb A tiny ODM for Nedb and Mongodb | aghae</title>
+    
+    <link rel="alternative" href="/atom.xml" title="aghae" type="application/atom+xml">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <link rel="stylesheet" href="/libs/fancybox/jquery.fancybox.css" charset="utf-8">
+    
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="canonical" href="https://aghae.github.io/post/nekodb a tiny odm for nedb and mongodb/">
+
+</head>
+<body class="site">
+    <header class="site-header">
+        <h1 class="site-title">
+            <a href="/">aghae</a>
+        </h1>
+        <h3 style="text-align:center;color:lightsteelblue"> <small>Don’t dream your life, live your dream.</small></h3>
+        <nav class="site-nav">
+            <ul class="nav">
+                
+                <li><a href="/about">About</a></li>
+                
+                <li><a href="/archives">Archives</a></li>
+                
+                <li><a href="http://github.com/aghae" rel="external nofollow noreferrer">Github</a></li>
+                
+                
+                <li><a href="/atom.xml" title="RSS Feed">rss</a></li>
+                
+                <li><a class="toggle-search" href="#search">search</a></li>
+            </ul>
+        </nav>
+        <div class="site-search" id="search">
+            <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><input type="hidden" name="sitesearch" value="https://aghae.github.io"></form>
+        </div>
+        
+    </header>
+    <div class="site-body">
+        <div class="global-width">
+    <article class="article" data-layout="post" data-slug="Nekodb A tiny ODM for Nedb and Mongodb">
+        <div class="article-content">
+            
+            
+            <header class="article-header">
+                <div class="article-meta">
+                    <a href="/post/Nekodb A tiny ODM for Nedb and Mongodb/" class="article-date">
+  <time datetime="2019-09-30T08:45:25.000Z">2019-09-30</time>
+</a>
+                    
+  <div class="article-category categories">
+    <a class="category-link" href="/categories/database/">database</a>
+  </div>
+
+                    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mongo/">mongo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nedb/">nedb</a></li></ul>
+
+                </div>
+                
+    <h1 class="article-title" itemprop="name">
+      <a href="/post/Nekodb A tiny ODM for Nedb and Mongodb/">Nekodb A tiny ODM for Nedb and Mongodb</a>
+    </h1>
+
+            </header>
+            
+            <div class="article-body">
+                <p>The Ne comes from NeDB, and ko refers to the Japanese diminuitive “ko” (小) or little.</p>
+<p>What is Nedb?</p>
+<blockquote>
+<p>NeDB is a lightweight database written entirely in Javascript, and that implements the well-known and loved MongoDB API. It is packaged as a Node module that be used with a simple require and can be used as an in-memory only or persistent datastore. You can think of it as SQLite for MongoDB projects.</p>
+</blockquote>
+<p>NekoDB comes with NeDB built in, so you can access a Mongo-like database, without actually installing or running a database at all. NeDB is suitable for datasets in the range of tens of thousands of documents. It is perfect for develop or small &amp; medium websites. For larger datasets, it is recommended you upgrade to MongoDB.</p>
+<ul>
+<li>To build the simplest, easiest to use ODM</li>
+<li>Stay as close to MongoDB syntax as possible<ul>
+<li>Provide model validation and model referencing</li>
+<li>Beyond that, just provide a thin wrapper over the native functionality</li>
+</ul>
+</li>
+<li><code>Support NeDB and MongoDB with an identical interface</code></li>
+<li>Promisify NeDB: no callback hell, only lovely Promises</li>
+<li>You can use it as <code>async await</code> in nodejs <code>7.6 &amp; more</code></li>
+</ul>
+<h2 id="Connecting-and-creating-schemas"><a href="#Connecting-and-creating-schemas" class="headerlink" title="Connecting and creating schemas"></a>Connecting and creating schemas</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ko = <span class="built_in">require</span>(<span class="string">'nekodb'</span>)</span><br><span class="line"></span><br><span class="line">ko.connect(&#123;</span><br><span class="line">    client: <span class="string">'nedb'</span>,</span><br><span class="line">    filepath: __dirname + <span class="string">'/db'</span>  </span><br><span class="line">    </span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">Or</span><br><span class="line"></span><br><span class="line">ko.connect(&#123;</span><br><span class="line">    client: <span class="string">'nedb'</span>,</span><br><span class="line">    inMemory: <span class="literal">true</span></span><br><span class="line">    </span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">ko.models(&#123;</span><br><span class="line">    Celebrity: &#123;</span><br><span class="line">        name: ko.String[<span class="number">50</span>],</span><br><span class="line">        age: ko.Number.integer(),</span><br><span class="line">        birthday: ko.Date,</span><br><span class="line">        instagram: ko.String[<span class="number">30</span>],</span><br><span class="line">        followers: ko.Number</span><br><span class="line">    &#125;,</span><br><span class="line">    Family: &#123;</span><br><span class="line">        name: ko.String,</span><br><span class="line">        members: [ko.models.Celebrity],</span><br><span class="line">        city: ko.String</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>if you want to connect mongodb rather than nedb</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ko.connect(&#123;</span><br><span class="line">    client: <span class="string">'mongodb'</span>,</span><br><span class="line">    username: <span class="string">'root'</span>,</span><br><span class="line">    password: <span class="string">'mongopassword'</span>,</span><br><span class="line">    address: <span class="string">'localhost:27017'</span>,</span><br><span class="line">    database: <span class="string">'nekodb'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>or</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ko.connect(&#123;</span><br><span class="line">    client: <span class="string">'mongodb'</span>,</span><br><span class="line">    url: <span class="string">'mongodb://username:password@localhost:27017/nekodb'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="Creating-a-model"><a href="#Creating-a-model" class="headerlink" title="Creating a model"></a>Creating a model</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> celebrity = ko.models.Celebrity.create(&#123;</span><br><span class="line">    name: <span class="string">'Kim Kardashian West'</span>,</span><br><span class="line">    age: <span class="number">37</span>,</span><br><span class="line">    birthday: <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'1980-10-21'</span>),</span><br><span class="line">    instagram: <span class="string">'@kimkardashian'</span>,</span><br><span class="line">    followers: <span class="number">1080000</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">celebrity.save().then(<span class="function"><span class="params">instance</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(instance)</span><br><span class="line">    <span class="comment">// instance will have been assigned an _id</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>if you want to use async await instead of promise call:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">instance = <span class="keyword">await</span> celebrity.save()</span><br><span class="line"><span class="built_in">console</span>.log(instance)</span><br></pre></td></tr></table></figure>
+
+<h2 id="Finding-models"><a href="#Finding-models" class="headerlink" title="Finding models"></a>Finding models</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ko.models.Celebrity.find(&#123;&#125;).then(<span class="function"><span class="params">instances</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(instances)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">ko.models.Celebrity.findOne(&#123;<span class="attr">name</span>: <span class="string">'Kanye West'</span>&#125;).then(<span class="function"><span class="params">instance</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(instance)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="Updating-a-model"><a href="#Updating-a-model" class="headerlink" title="Updating a model"></a>Updating a model</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ko.models.Celebrity.findOne(&#123;<span class="attr">name</span>: <span class="string">'Kim Kardashian'</span>&#125;).then(<span class="function"><span class="params">instance</span> =&gt;</span> &#123;</span><br><span class="line">    instance.name = <span class="string">'Kim Kardashian West'</span></span><br><span class="line">    <span class="keyword">return</span> instance.save()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="Deleting-models"><a href="#Deleting-models" class="headerlink" title="Deleting models"></a>Deleting models</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ko.models.Celebrity.deleteOne(&#123;<span class="attr">name</span>: <span class="string">'Johnny Depp'</span>&#125;).then(<span class="function"><span class="params">deletedCount</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(deletedCount)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>that’s it.<br>It has more features that you can see them on <a href="https://github.com/4strid/nekodb" rel="noopener external nofollow noreferrer" target="_blank">NEKDODB</a></p>
+
+            </div>
+        </div>
+    </article>
+
+    
+    
+<nav class="article-nav">
+  
+  
+    <a href="/post/simple-tunnel-with-linux-box/" id="article-nav-older" class="article-nav-link-wrap next">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">simple tunnel  with linux box</div>
+    </a>
+  
+</nav>
+
+    
+
+    
+    <section id="comments" class="article-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="external nofollow noreferrer">comments powered by Disqus.</a></noscript>
+        </div>
+    </section>
+    
+</div>
+
+    </div>
+    <footer class="site-footer">
+        <div class="global-width">
+            <ul class="site-widget">
+                
+                <li class="widget widget-tag">
+                    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongo/">mongo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nedb/">nedb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/security/">security</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+                </li>
+                
+                <li class="widget widget-category">
+                    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cheatsheet/">cheatsheet</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/serverless/">serverless</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+                </li>
+                
+                <li class="widget widget-recent_posts">
+                    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-body">
+      <ul>
+        
+          <li>
+            <a href="/post/Nekodb A tiny ODM for Nedb and Mongodb/">Nekodb A tiny ODM for Nedb and Mongodb</a>
+          </li>
+        
+          <li>
+            <a href="/post/simple-tunnel-with-linux-box/">simple tunnel  with linux box</a>
+          </li>
+        
+          <li>
+            <a href="/post/howto-multi-lingual-site-with-Hexo/">howto  multi-lingual site with Hexo</a>
+          </li>
+        
+          <li>
+            <a href="/post/git cheatsheet/">git cheatsheet</a>
+          </li>
+        
+          <li>
+            <a href="/post/markdown cheatsheet/">markdown cheatsheet</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+                </li>
+                
+            </ul>
+        </div>
+        <div class="site-info">
+            <address>
+                &copy; 2019 <a href="https://aghae.github.io">aghae</a> All Right Reserved. <br>
+            </address>
+        </div>
+    </footer>
+    
+    <script>
+        var disqus_shortname = 'aghae';
+        
+        var disqus_url = 'https://aghae.github.io/post/Nekodb A tiny ODM for Nedb and Mongodb/';
+        
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    
+    <script src="/libs/jquery-1.11.3.min.js" type="text/javascript"></script>
+    
+    <script src="/libs/fancybox/jquery.fancybox.js" type="text/javascript"></script>
+    
+    <script src="/js/site_init.js" type="text/javascript"></script>
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-148901512-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    
+</body>
+</html>
