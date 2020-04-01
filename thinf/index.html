@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Title</title>
+    <link href="dist/thinf.css" rel="stylesheet">
+    <script src='dist/thinf.js'></script>
+</head>
+<body>
+
+<div class='container'>
+    <div class='overlay' id='left-sider'>
+        <div class='side  anm-left' >
+            <div class='body  thin-scroll' style='padding-top:0'>
+                    <!-- <div class='txt-right'><button style='margin:0' onclick='closeSide("left-sider")'>x</button></div> -->
+                    
+                    <a class='close' onclick='closeSide("left-sider")'></a>
+
+                    <p>Left Sider:  </p>
+
+                    <ul class="collapsibleList light">
+                        <li>
+                         <input type="checkbox" id="mylist-node1" />
+                         <label for="mylist-node1">Click to open list 1</label>
+                         
+                         <ul>
+                          <li>Item 1</li>
+                          <li>
+                            <input type="checkbox" id="mylist-node111" /><label for="mylist-node111">Clickme</label>
+                            
+                            <ul>
+                             <li>Item 1</li>
+                             <li>Item 2</li>
+                             <li>Item 3</li>
+                            </ul>
+                          </li>
+                          <li>Item 3</li>
+                         </ul>
+                        </li>
+                        <li>
+                          <input type="checkbox" id="mylist-node11" />
+                          <label for="mylist-node11">Click to open list 2</label>
+                         
+                         <ul>
+                          <li>Item 1</li>
+                          <li>Item 2</li>
+                          <li>Item 3</li>
+                         </ul>
+                        </li>
+                    </ul>
+
+                    <hr>
+                    @copyrights
+
+                
+            </div>
+        </div>
+    </div>
+
+    <div class='overlay' id='right-sider'>
+        <div class='side right anm-right' >
+            <div class='body'>This is right side</div>
+        </div>
+    </div>
+
+    <a href="https://github.com/aghae/thinf"  class='btn right'>Github</a>
+    <a href="https://aghae.github.io/thinf/demo.htm" class='btn right'>Download</a>
+    
+    <h1>
+        Thinf (Thin web framework) Demo
+        <hr>
+    </h1>
+   
+
+    <h1>Navigation</h1> <br>
+    <!-- <div> -->
+        <nav class='pos'  style='height:50px'>
+            <div class='ml'>
+                    <img src="https://picsum.photos/100" class="circle" style='float:left'> Think diffrent
+            </div>
+            <div class='mc'>
+                <ul class="menu" >
+                    <li><a href="#">Nav Link</a></li>
+                    <li><a href="#" class="nav-active">MultiLevel</a>
+                      <ul>
+                        <li><a href="#">Sub Nav Link</a></li>
+                        <li><a href="#">Sub Nav Link</a>
+                          <ul>
+                            <li><a href="#">Sub Sub Nav Link</a></li>
+                            <li><a href="#">Sub Sub Nav Link</a></li>
+                            <li><a href="#">Sub Sub Nav Link</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#">Sub Nav Link</a></li>
+                        <li><a href="#">Sub Nav Link</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">Nav Link</a></li>
+                    <li><a href="#">Nav Link</a></li>
+                    <li><a href="#">Nav Link</a></li>
+                    <li style='position:unset'>
+                      <div class='drop full'>
+                          <a href="">Mega Menu</a>
+                          <div class='content' style='overflow:0'>
+                              <div class='row'>
+                                  <div class='1 col p'>
+                                      <img src="https://picsum.photos/150" class="rounded ">
+                                  </div>  
+                                  <div class='col'> 
+                                          <b>Item 1</b>
+                                          <dl>
+                                              <dt><a href="">subItem 1</a></dt>
+                                              <dt><a href="">subItem 2</a></dt>
+                                              <dt><a href="">subItem 3</a></dt>
+                                          </dl>
+                                  </div>
+                                  <div class='col'>
+                                      <b>Item 2</b>
+                                      <dl>
+                                          <dt><a href="">subItem 1</a></dt>
+                                          <dt><a href="">subItem 2</a></dt>
+                                          <dt><a href="">subItem 3</a></dt>
+                                      </dl>
+                                  </div>
+                                  <div class='col'> 
+                                      <b>Item 3</b>
+                                      <dl>
+                                          <dt><a href="">subItem 1</a></dt>
+                                          <dt><a href="">subItem 2</a></dt>
+                                          <dt><a href="">subItem 3</a></dt>
+                                      </dl>
+                                  </div>
+                          </div>
+                      </div>
+                    </li>
+                  </ul>
+            </div>
+            <div class='mr'>
+                <a href="#">Signup </a> | 
+                <a href="#">About </a>
+            </div>
+            
+        </nav>
+
+        <!-- </div> -->
+    
+    <br><br><h1>Dropdown</h1>
+    <div class='drop'>
+        <label>dropdown</label>
+        <div class='content'>
+            this is drop down content <br>
+            ddd
+        </div>
+    </div> | 
+    
+    <div class='drop full' >
+        <label>Dropdown(Full)</label> 
+        <div class='content'>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            Why do we use it?
+            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+        </div>
+    </div> | 
+
+    <div class='drop right' >
+        <label> Dropdown(Right)</label>
+        <div class='content'>
+            this is drop down content ....
+        </div>
+    </div>
+    | 
+
+  
+    <div class='drop click' >
+        <input type="text"  value='click me' style='z-index:100 !important'>
+        <div class='content'>
+            I created after you clicked ;)
+        </div>
+    </div> 
+
+
+    <br><br><h1>Tabs</h1>
+    <div class="tabs resp">
+        <input type="radio" name="tabs" id="tab1" checked="checked"><label for="tab1">First Tab</label>
+        <div class="tab">
+            <p>
+                First Tab Content containing with vertical tabs
+            </p>
+            
+            <div class="tabs vertical ">
+                <input type="radio" name="sub_tabs" id="sub_tab1" checked=""><label for="sub_tab1">First Tab</label>
+                <div class="tab">
+                    First Tab Content ...
+                </div>
+                
+                <input type="radio" name="sub_tabs" id="sub_tab2"><label for="sub_tab2">Second Tab</label>
+                <div class="tab">
+                    Second Tab Content ...
+                </div>
+                
+                <input type="radio" name="sub_tabs" id="sub_tab3"><label for="sub_tab3">Third Tab</label>
+                <div class="tab">
+                    Third Tab Content ...
+                </div>
+            </div>
+        </div>
+        
+        <input type="radio" name="tabs" id="tab2"><label for="tab2">Second Tab</label>
+        <div class="tab">
+          Second Tab Content ...
+        </div>
+        
+        <input type="radio" name="tabs" id="tab3"><label for="tab3">Third Tab</label>
+        <div class="tab">
+          Third Tab Content ...
+        </div>
+    </div>
+
+    
+    <br><br><h1>Collapsive Menu</h1>
+    <ul class="collapsibleList light">
+        <li>
+         <input type="checkbox" id="node1" />
+         <label for="node1">Click to open list 1</label>
+         <ul>
+          <li>Item 1</li>
+          <li>
+            <input type="checkbox" id="subnode1" /><label for="subnode1">Clickme</label>
+            
+            <ul>
+             <li>Item 1</li>
+             <li>Item 2</li>
+             <li>Item 3</li>
+            </ul>
+          </li>
+          <li>Item 3</li>
+         </ul>
+        </li>
+        <li>
+          <input type="checkbox" id="node2"  />
+          <label for="node2">Click to open list 2</label>
+         
+         <ul>
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+         </ul>
+        </li>
+    </ul>
+
+
+
+
+    <br><br><h1>Position Area</h1>
+    <div class='pos' style='height:200px;background: rgb(240, 239, 239)'>
+        <div class='tl'>top-left</div>
+        <div class='tc'>top-center</div>
+        <div class='tr'>top-right</div>
+        <div class='ml'>mid-left</div>
+        <div class='mc hide-onhover '><h4  style='color:red'>Hover me</h4></div>
+        <div class='mc show-onhover anm-fadeout '><h4>mid-center</h4></div>
+        <div class='mr'>mid-right</div>
+        <div class='bl'>bot-left</div>
+        <div class='bc'>bot-center </div>
+        <div class='br'>bot-right</div>
+    </div>
+    <br>
+    <div class='pos primary ' style='height:300px'>
+        <div class='mc txt-center '>
+            <h1 >This is hero</h1>
+            <h2>made by position area</h2>
+        </div>
+    </div>
+    
+
+    <br><br><h1>Slides</h1>
+    <div id='myslide' class='pos'>
+        <div class='slide pos info'  style='height:300px'><div class='mc txt-center '><h3>Slide1</h3></div></div>
+        <div class='slide pos warn'  style='height:300px'><div class='mc txt-center '><h3>Slide2</h3></div></div>
+        <div class='slide pos danger' style='height:300px'><div class='mc txt-center '><h3>Slide3</h3></div></div>
+        <div class='slide pos light' style='height:300px'><div class='mc txt-center '><h3>Slide4</h3></div></div>
+        <div class='slide pos dark' style='height:300px'><div class='mc txt-center '><h3>Slide5</h3></div></div>
+
+        <div class='ml show-onhover'><button onclick='prevSlide("myslide")' class='circle opc'> &larr;</button></div>
+        <div class='mr show-onhover'><button onclick='nextSlide("myslide")' class='circle opc'>&rarr;</button> </div>
+    </div>
+    <script language='javascript'>
+        showSlide('myslide')
+    </script>
+    
+    <br><br><h1>Buttons</h1>
+    <div>
+        <button class=''>Button</button>
+        <button class='primary'>Primary</button>
+        <button class='info'>info</button>
+        <button class='succ'>success</button>
+        <button class='warn'>Warn</button>
+        <button class='danger'>danger</button>
+        <button class='light'>light</button>
+        <a href="" class='btn'>Link button</a>
+        <a href="">Link</a>
+    </div>
+
+    <br><br><h1>Typography</h1>
+    <div class='row '>
+        <div class='col'>
+            <b>Heading:</b><br>
+            <h1>H1</h1>
+            <h2>H2</h2>
+            <h3>H3</h3>
+            <h4>H4</h4>
+            <h5>H5</h5>
+            <h6>H6</h6>
+            <h3>
+                heading
+                <small class="txt-muted ">With faded secondary text</small>
+            </h3>
+        </div>
+       
+        <div class='col thin-scroll' >
+            <p><b>Blockquote :</b></p>
+            <blockquote>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+            <footer>Someone famous in 
+                <cite title="Source Title">Source Title</cite>
+            </footer>
+            </blockquote>
+    
+            <p><b>Code :</b></p>
+            For example, <code>&lt;section&gt;</code> should be wrapped as inline.
+    
+            <p><b>Mark & Tag :</b></p>
+            These are  <mark>Mark</mark> & 
+            <span class='tag primary'>Tag</span>
+            <span class='tag info'>Tag</span>
+            <span class='tag succ'>Tag</span>  
+            <span class='tag warn'>Tag</span>
+            <span class='tag danger'>Tag</span>
+            <span class='tag light'>Tag</span>
+
+            <p><b>Pre code :</b></p>
+            <pre><code>&lt;p&gt;Sample text here...&lt;/p&gt;<br>&lt;p&gt;And another line of sample text here...&lt;/p&gt;</code></pre>
+    
+            
+
+        </div>
+    </div>
+     <div class='row pt'>
+            <div class='col'>
+                thumb image <br>
+                <img src="https://via.placeholder.com/150" alt="" class='thumb  rounded '>
+            </div>
+            <div class='col'>
+                Figure:
+                <figure class=''>
+                    <img src="https://via.placeholder.com/150" class="" >
+                    <figcaption>A caption for the above image.</figcaption>
+                </figure>
+            </div>
+            <div class='col'>
+                <figure class=''>
+                    <img src="https://via.placeholder.com/150" class="resp" >
+                    <figcaption>Responsive image.</figcaption>
+                </figure>
+            </div>
+            
+    </div>
+
+    <br><br><h1>Fluid Columns</h1>
+    Auto columns:
+    <div class='row bordered-cols '>
+        <!-- <div></div> -->
+            <div class='col' >col</div>
+            <div class='col' >col</div>
+            <div class='col' >col</div>
+            <div class='col' >col</div>
+            <div class='col' >col</div>
+            <div class='col' >col</div>
+            <div class='col' >col</div>
+            <div class='col' >col</div>
+            <div class='col' >col</div>
+    </div>
+    <br>sized columns:
+    <div class='row bordered-cols '>
+        <div class='1 col'>1</div>
+        <div class='2 col'>2</div>
+        <div class='col'>auto col</div>
+        <div class='4 col'>4</div>
+        <div class='2 col'>2</div>
+        <div class='6 col'>6</div>
+        <div class='5 col'>5</div>
+        <div class='4 col'>4</div>
+        <div class='3 col'>3</div>
+        <div class='2 col'>2</div>
+    </div>
+
+
+    <br><br><h1>Modal/Toast/Sider</h1>
+    <div>
+        <button class='primary ' onclick='showModal("modal1")'>Modal from static Content</button>
+        <button class='primary ' onclick='showModal("","Hello","Title","sm","anm-top")'>Modal with Dynamic Content</button>
+        <button class='primary ' onclick='showModal("","Hello","Title","full","anm-top")'>Modal Full</button>
+        <button class='info' onclick="showToast('this is a <i>toast</i> <br>')">Toast</button>
+        <button class='succ' onclick="showSide('left-sider')">Left Sider</button>
+        <button class='succ' onclick="showSide('right-sider')">Right Sider</button>
+    </div>
+    
+    <div class='overlay' id='modal1'>
+        <div class='modal sm' >
+            <div class='content rounded'>
+                <a class='close'></a>
+                <div class='title'>Modal Title</div>
+                <hr>
+                <div class='body'>
+                    modal body ... 
+                    <br>
+                    <button class='' onclick='closeSide("modal1")'  >Close</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <br><br><h1>Card</h1>
+    <div class=row>
+        <div class='col p'>
+            <div class='card' >
+                <h4>Card Title</h4>
+                <img src="https://via.placeholder.com/150" class='resp'>
+                <p>Here is some text that generally describes the card, or something about it.</p>
+                <button class="btn dim" >Okay</button>
+                <button class="btn primary">Cancel</button>
+            </div>
+        </div>
+        <div class='col p'>
+            <div class='card' >
+                <h4>Card Title</h4>
+                <p>Here is some text that generally describes the card, or something about it.</p>
+                <button class="btn dim" >Okay</button>
+                <button class="btn primary">Cancel</button>
+                <img src="https://via.placeholder.com/150" class='resp mt'>
+            </div>
+        </div>
+        <div class='col p'>
+            <div class='card' >
+                
+                <button class="btn dim right" >Okay</button>
+                <button class="btn primary right">Cancel</button>
+                <img src="https://via.placeholder.com/150" class='resp mt'>
+                <h4>Card Title</h4>
+                <p>Here is some text that generally describes the card, or something about it.</p>
+            </div>
+        </div>
+    </div>
+   
+  
+
+    <br><br><h1>Table(Responsive capable)</h1>
+    <table class='w100 '>
+        <caption>Table</caption>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Family</th>
+                <th>Tel</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-label="Name">A1</td>
+                <td data-label="Family">A2</td>
+                <td data-label="Tel">A3</td>
+                <td data-label="Address">A4</td>
+            </tr>
+            <tr>
+                <td data-label="Name">B1</td>
+                <td data-label="Family">B2</td>
+                <td data-label="Tel">B3</td>
+                <td data-label="Address">B4</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br><br>
+    <table class='w100 zebra resp'>
+        <caption>Zebra Liked Table</caption>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Family</th>
+                <th>Tel</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-label="Name">A1</td>
+                <td data-label="Family">A2</td>
+                <td data-label="Tel">A3</td>
+                <td data-label="Address">A4</td>
+            </tr>
+            <tr>
+                <td data-label="Name">B1</td>
+                <td data-label="Family">B2</td>
+                <td data-label="Tel">B3</td>
+                <td data-label="Address">B4</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br><br><h1>Form</h1>
+    <div>   
+        <p>Name:
+            <input type="" name=""  class=''> 
+        </p>
+
+        <p> Sex:
+            <select class=''>
+                <option>Man</option>
+                <option>Woman</option>
+            </select>
+            <select class='info'>
+                <option>Man</option>
+                <option>Woman</option>
+            </select>
+            <select class='primary'>
+                <option>Man</option>
+                <option>Woman</option>
+            </select>
+            <select class='succ'>
+                <option>Man</option>
+                <option>Woman</option>
+            </select>
+            <select class='warn'>
+                <option>Man</option>
+                <option>Woman</option>
+            </select>
+            <select class='danger'>
+                <option>Man</option>
+                <option>Woman</option>
+            </select>
+            <select class='light'>
+                <option>Man</option>
+                <option>Woman</option>
+            </select>
+            
+        </p>
+
+        <p> Mariage: <br><br>
+            <input type='radio' name='rd1' value=1 >Single  &nbsp;
+            <input type='radio' name='rd1' value=2>Married
+        </p>
+
+        <p> favs: <br><br>
+            <input type='checkbox' name='rd1' value=1 >Reading  Newspaper <br>
+            <input type='checkbox' name='rd1' value=2>Watch TV <br>
+            <input type='checkbox' name='rd1' value=2 class='info'>Sport
+        </p>
+        
+        <p>Email
+            <input type="email" name="" > 
+        </p>
+
+        <p>Upload 
+            <input type="file" name="" > 
+        </p>
+
+        <p>Description:
+            <textarea ></textarea>
+        </p>
+
+        <p>
+                <button>Submit</button>
+        </p>
+         
+    </div>
+           
+</div>
+
+<!-- <script src='js/prism.js' data-manual></script>
+<script>
+
+    document.addEventListener('DOMContentLoaded', function(event){
+        //show element with prism class
+        var elms = document.querySelectorAll('.prism')
+        for(var  elm of elms){
+            var from_id=elm.getAttribute('from')
+            from=document.getElementById(from)
+            var from=document.getElementById(from_id)
+            elm.innerHTML= htmlEncode(from.innerHTML).trim()
+            Prism.highlightElement(elm) 
+         }
+    })
+
+    function htmlEncode(string){
+        return string.replace(/&/g, "&amp;")
+                     .replace(/>/g, "&gt;")
+                     .replace(/</g, "&lt;")
+                     .replace(/"/g, "&quot;");
+
+    }
+    
+  
+    
+</script> -->
+
+</body>
+</html>
+
