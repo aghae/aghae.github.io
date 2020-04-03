@@ -3,11 +3,11 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thinf Demo</title>
+    <title>thinf(thin frontend framewrok) - demo</title>
     <link href="dist/thinf.css" rel="stylesheet">
     <script src='dist/thinf.js'></script>
 </head>
-<body>
+<body dir='rtl'>
 
 <div class='container'>
     <div class='overlay' id='left-sider'>
@@ -68,7 +68,7 @@
     
     
     <h2 class='p light'>
-        Thinf (Thin frontend framework) Demo
+        thinf (thin frontend framework) - demo
         <hr>
     </h2>
    
@@ -170,9 +170,10 @@
     <div class='col'>   
             <p><h2>Tabs</h2></p>
             <div class="tabs resp ">
+
                 <input type="radio" name="tabs" id="tab1" checked="checked"><label for="tab1">First Tab</label>
                 <div class="tab">
-                        First Tab Content containing with vertical tabs
+                First Tab Content ...
                 </div>
                 
                 <input type="radio" name="tabs" id="tab2"><label for="tab2">Second Tab</label>
@@ -184,6 +185,7 @@
                 <div class="tab">
                 Third Tab Content ...
                 </div>
+
             </div>
     </div> 
     <div class='col'>
@@ -260,8 +262,8 @@
                 <div class='slide  light'  style='height:150px'><div class='mc txt-center '><h3>Slide4</h3></div></div>
                 <div class='slide  dark'   style='height:150px'><div class='mc txt-center '><h3>Slide5</h3></div></div>
 
-                <div class='ml show-onhover'><button onclick='prevSlide("myslide")' class='opc'>&larr;</button></div>
-                <div class='mr show-onhover'><button onclick='nextSlide("myslide")' class='opc'>&rarr;</button> </div>
+                <div class='ml show-onhover'><button onclick='prevSlide("myslide")' class='opc'>&lt;</button></div>
+                <div class='mr show-onhover'><button onclick='nextSlide("myslide")' class='opc'>&gt;</button> </div>
             </div>
             <script language='javascript'>
                 showSlide('myslide')
@@ -286,29 +288,34 @@
     <div class='row '>
         <div class='col'>
             <b>Heading:</b><br>
+          
             <h1>H1</h1>
             <h2>H2</h2>
             <h3>H3</h3>
             <h4>H4</h4>
             <h5>H5</h5>
             <h6>H6</h6>
-            <h3>
-                Heading
-                <small class="txt-muted ">With faded secondary text</small>
-            </h3>
+            <h2>
+                Heading title <br>
+                <small>with subtitle</small>
+            </h2>
+            
         </div>
        
         <div class='col thin-scroll' >
             <b>Blockquote :</b>
             <blockquote>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-            <footer>Someone famous in 
-                <cite title="Source Title">Source Title</cite>
-            </footer>
+                Listen: this world is the lunatic's sphere,
+                Don't always agree it's real,
+                
+                Even with my feet upon it
+                And the postman knowing my door
+                
+                My address is somewhere else.
+            <cite>Hafiz &lt;<a href="https://en.wikipedia.org/wiki/Hafiz">wiki</a>&gt;</cite>
             </blockquote>
     
-            <p><b>Code :</b></p>
-            For example, <code>&lt;section&gt;</code> should be wrapped as inline.
+            
     
             <p><b>Mark & Tag :</b></p>
             These are  <mark>Mark</mark> & 
@@ -319,11 +326,7 @@
             <span class='tag danger'>Tag</span>
             <span class='tag light'>Tag</span>
 
-            <p><b>Pre code :</b></p>
-            <pre><code>&lt;p&gt;Sample text here...&lt;/p&gt;<br>&lt;p&gt;And another line of sample text here...&lt;/p&gt;</code></pre>
-    
-            
-
+           
         </div>
     </div>
 
