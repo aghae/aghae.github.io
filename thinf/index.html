@@ -274,11 +274,12 @@
             <div>
                 <button class=''>Button</button>
                 <button class='primary'>Primary</button>
-                <button class='info'>info</button>
-                <button class='succ'>success</button>
+                <button class='info'>Info</button>
+                <button class='succ'>Success</button>
                 <button class='warn'>Warn</button>
-                <button class='danger'>danger</button>
-                <button class='dark'>light</button>
+                <button class='danger'>Danger</button>
+                <button class='light'>Light</button>
+                <button class='dark'>Dark</button>
                 <a href="" class='btn'>Link button</a>
                 <a href="">Link</a>
             </div>
@@ -442,14 +443,21 @@
                 <p>Here is some text that generally describes the card, or something about it.</p>
             </div>
         </div>
-        <div class='col'></div>
+        <div class='col' >
+            <div class='card  light '><p>Light Message with Card</p></div>
+            <div class='card  info '><p>Info Message with Card</p></div>
+            <div class='card  succ'><p>Succ Message with Card</p> </div>
+            <div class='card  warn'><p>Warn Message with Card</p> </div>
+            <div class='card  danger'><p>Danger Message with Card</p> </div>
+            <div class='card  dark'><p>Dark Message with Card</p> </div>
+        </div>
     </div>
    
   
 
     <br><br><h2>Table</h2>
     <table class='w100 resp'>
-        <caption>Table (Responsive  capable)</caption>
+        <caption>Table (Responsive Mobile View)</caption>
         <thead>
             <tr>
                 <th>Name</th>
@@ -475,8 +483,40 @@
     </table>
 
     <br><br>
+    <div class='overflow-x'>
+    <table class='w100'>
+        <caption>Table (Scrollable)</caption>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Family</th>
+                <th>Tel</th>
+                <th>Email</th>
+                <th>Fax</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>A1</td>
+                <td>A2</td>
+                <td>A3</td>
+                <td>A4</td>
+                <td>A5</td>
+            </tr>
+            <tr>
+                <td>B1</td>
+                <td>B2</td>
+                <td>A3</td>
+                <td>A4</td>
+                <td>B5</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+
+    <br><br>
     <table class='w100 zebra '>
-        <caption>Zebra Like Table (without responsive)</caption>
+        <caption>Zebra Like Table </caption>
         <thead>
             <tr>
                 <th>Name</th>
