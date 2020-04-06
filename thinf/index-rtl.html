@@ -4,10 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>thinf(thin frontend framewrok) - demo</title>
-    <link href="dist/thinf.css" rel="stylesheet">
+    <link href="dist/thinf-rtl.css" rel="stylesheet">
     <script src='dist/thinf.js'></script>
     <style>
-         @font-face {
+        @font-face {
             font-family: irsans;
             src: url('font/irsans.woff');
         }
@@ -17,16 +17,16 @@
         }
 
         p + h2 {
-            background: skyblue ;
+            background:  skyblue;
             padding:.5em;margin:1em 0
         }
     </style>
 </head>
-<body>
+<body dir='rtl'>
 
 <div class='container'>
     <div class='overlay' id='left-sider'>
-        <div class='side  anm-left' >
+        <div class='side  left anm-left' >
             <div class='body  thin-scroll' style='padding-top:0'>
                     <!-- <div class='txt-right'><button style='margin:0' onclick='closeSide("left-sider")'>x</button></div> -->
                     
@@ -74,20 +74,20 @@
     </div>
 
     <div class='overlay' id='right-sider'>
-        <div class='side right anm-right' >
+        <div class='side  right anm-right' >
             <div class='body'>This is right side</div>
         </div>
     </div>
 
     <a href="https://github.com/aghae/thinf"  class='btn right'>Github</a>
-    <a href="/index-rtl.html"  class='btn right'>RTL</a>
+    <a href="/index.html"  class='btn right'>LTR</a>
     
     
-    <h3 class='p light'>
+    <h2 class='p light'>
         thinf (thin frontend framework) - demo <br>
-        تینف - یک فریمورک فرانت اند سبک
+        تینف - یک فریمورک سبک
         <hr>
-    </h3>
+    </h2>
    
 
     <p><h2>Navigation</h2></p> 
@@ -425,7 +425,7 @@
         <button class='primary ' onclick='showModal("modal1")'>Modal from static Content</button>
         <button class='primary ' onclick='showModal("","Hello","Title","sm","anm-top")'>Modal with Dynamic Content</button>
         <button class='primary ' onclick='showModal("","Hello","Title","full","anm-top")'>Modal Full</button>
-        <button class='info' onclick="showToast('this is a <i>toast</i> <br>')">Toast</button>
+        <button class='info' onclick="showToast('this is a <i>toast</i> <br>',2000,'danger','tl')">Toast</button>
         <button class='succ' onclick="showSide('left-sider')">Left Sider</button>
         <button class='succ' onclick="showSide('right-sider')">Right Sider</button>
     </div>
@@ -624,17 +624,17 @@
 
         <section>
             <label class='top'>Description:</label>
-            <div><textarea class='w100' rows=5 ></textarea></div> 
+            <div class='w100'><textarea class='w100' rows=10 ></textarea></div> 
         </section>
 
-        <div class=right>
-         <button>Submit</button>
-        </div>
+        <section>
+            <button>Submit</button>
+        </section>
 
     </div>
 
 
-    <div>
+    <div class='form'>
         <br><br>
         <p><h3>Themes & styles</h3></p>
         <div>
