@@ -6,6 +6,11 @@
     <title>thinf(thin frontend framewrok) - demo</title>
     <link href="dist/thinf.css" rel="stylesheet">
     <script src='dist/thinf.js'></script>
+
+    <!-- For highlight pre code -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.20.0/themes/prism.css" rel="stylesheet">
+    <script src='https://cdn.jsdelivr.net/npm/prismjs@1.20.0/prism.js' data-manual></script>
+    
     <style>
          @font-face {
             font-family: irsans;
@@ -20,6 +25,8 @@
             background: skyblue ;
             padding:.5em;margin:1em 0
         }
+
+
     </style>
 </head>
 <body>
@@ -151,19 +158,67 @@
     <div class='row '>
         <div class='col'>
             <b>Heading:</b><br>
-          
-            <h1>H1</h1>
-            <h2>H2</h2>
-            <h3>H3</h3>
-            <h4>H4</h4>
-            <h5>H5</h5>
-            <h6>H6</h6>
-            <h2>
-                Heading title <br>
-                <small>with subtitle</small>
-            </h2>
+            <div class='row'>
+                <div class='col'>
+                    <h1>H1</h1>
+                    <h2>H2</h2>
+                    <h3>H3</h3>
+                    <h4>H4</h4>
+                    <h5>H5</h5>
+                    <h6>H6</h6>
+                </div>
+                <div class='col'>
+                    <h2>
+                        Heading title <br>
+                        <small>with subtitle</small>
+                    </h2>
+                </div>
+            </div>
             
+            <b>List:</b><br>
+            <div class='row'>
+                <div class='col'>
+                    <!-- unstyled list -->
+                    <span class='color-info'> styled :</span> 
+                    <ul class='list'>
+                        <li>item</li>
+                        <li>item
+                            <ul>
+                                <li>sub</li>
+                                <li>sub</li>
+                                <li>sub</li>
+                                <li>sub</li>
+                            </ul>
+                        </li>
+                        <li>item</li>
+                        <li>item</li>
+                    </ul>
+                    
+                </div>
+                <div class='col'>
+                   
+                    <span class='color-info'> unstyled:</span> 
+                    <ul class='list-unstyled'>
+                        <li>item</li>
+                        <li>item
+                            <ul>
+                                <li>sub </li>
+                                <li>sub </li>
+                                <li>sub </li>
+                                <li>sub </li>
+                            </ul>
+                        </li>
+                        <li>item</li>
+                        <li>item</li>
+                    </ul>
+                </div>
+
+                
+            </div>
+           
         </div>
+
+
        
         <div class='col thin-scroll' >
             
@@ -200,6 +255,21 @@
             <span class='color-danger'>danger </span> , 
             <span class='color-dark'>dark </span> , 
             <span class='color-light'>light </span> 
+            
+            <br><p><b>code (highlited by prism):</b>
+
+            </p>
+            <pre>
+            <code class='prism language-js'>
+    var a = 1   
+    function jsfunc(a){
+        return a++
+    }
+
+    console.log(a)        //return 1
+    console.log(jsfunc(a))  //return 2
+            </code>
+            </pre>
                 
         </div>
     </div>
@@ -288,8 +358,10 @@
                 <button class='danger'>Danger</button>
                 <button class='light'>Light</button>
                 <button class='dark'>Dark</button>
-                <a href="" class='btn'>Link button</a>
-                <a href="">Link</a>  <br>
+                <button class='outline'>Outline</button>
+                <a class='btn'>Link button</a> 
+
+                <br>
 
                 <button class='small'>Small</button>
                 <button class=''>Normal</button>
@@ -748,32 +820,6 @@
     </div>
 </div>
 
-<!-- <script src='js/prism.js' data-manual></script>
-<script>
-
-    document.addEventListener('DOMContentLoaded', function(event){
-        //show element with prism class
-        var elms = document.querySelectorAll('.prism')
-        for(var  elm of elms){
-            var from_id=elm.getAttribute('from')
-            from=document.getElementById(from)
-            var from=document.getElementById(from_id)
-            elm.innerHTML= htmlEncode(from.innerHTML).trim()
-            Prism.highlightElement(elm) 
-         }
-    })
-
-    function htmlEncode(string){
-        return string.replace(/&/g, "&amp;")
-                     .replace(/>/g, "&gt;")
-                     .replace(/</g, "&lt;")
-                     .replace(/"/g, "&quot;");
-
-    }
-    
-  
-    
-</script> -->
 
 </body>
 </html>
