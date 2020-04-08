@@ -92,8 +92,6 @@
     
     <h3 class='p light'>
         thinf (thin frontend framework) - demo <br>
-        تینف - یک فریمورک فرانت اند سبک
-        <hr>
     </h3>
    
 
@@ -438,6 +436,20 @@
             ddd
         </div>
     </div> | 
+
+    <div class='drop right' >
+        <label> Dropdown(Right)</label>
+        <div class='content'>
+            this is drop down content ....
+        </div>
+    </div> | 
+
+    <div class='drop click' >
+        <input type='checkbox' id='lnkclk'><label for='lnkclk'> click me</label>
+        <div class='content'>
+            this is drop down content ....
+        </div>
+    </div> | 
     
     <div class='drop full' >
         <label>Dropdown(Full)</label> 
@@ -446,16 +458,9 @@
             Why do we use it?
             It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
         </div>
-    </div> | 
+    </div> |
 
-    <div class='drop right' >
-        <label> Dropdown(Right)</label>
-        <div class='content'>
-            this is drop down content ....
-        </div>
-    </div>
-    | 
-
+   
   
     <div class='drop click' >
         <input type="text"  value='click me' style='z-index:100 !important'>
@@ -472,37 +477,100 @@
                     <img src="https://picsum.photos/50" class="circle">
                     <img src="https://picsum.photos/80" class="circle ">
                     <img src="https://picsum.photos/90" class="circle thumb">
+
+                
+                
             </div>
             <div class='col'>
                 thumb image <br>
                 <img src="https://via.placeholder.com/150" alt="" class='thumb  rounded '>
             </div>
             <div class='col'>
-                Figure:
-                <figure class=''>
+                Figured 
+                <figure>
                     <img src="https://via.placeholder.com/150" class="" >
                     <figcaption>A caption for the above image.</figcaption>
+                    
                 </figure>
             </div>
             <div class='col'>
                 Responsive image
                 <img src="https://via.placeholder.com/150" class="resp" >
             </div>
+
+            <div class='col'>
+                Effects: (Refresh page for changing picture)<br><br>
+
+                <div class='row'>
+                    <div class='col'>
+                        <div class='row'>
+                            <div class=' 1 col'>
+                            opacity <br>
+                            <img src="http://lorempixel.com/150/150/" class="opc" style='width:60%' >
+                            </div>
+                            <div class='1 col'>
+                            grayscale <br>
+                            <img src="http://lorempixel.com/150/150/" class="gscl" style='width:60%' >
+                            </div>
+                            <div class='1 col'>
+                            sepia <br>
+                            <img src="http://lorempixel.com/150/150/" class="spa" style='width:60%' >
+                            </div>
+                     </div>
+                    </div>
+                    <div class='col'>
+                        hover on bellow images for effect
+                        <div class='row'>
+                            <div class=' 1 col'>
+                                <!-- opacity on hover<br> -->
+                                <img src="http://lorempixel.com/150/150/" class="opc-hov" style='width:60%' >
+                            </div>
+                            <div class='1 col'>
+                                <!-- grayscale  <br> -->
+                                <img src="http://lorempixel.com/150/150/" class="gscl-hov" style='width:60%' >
+                            </div>
+                            <div class='1 col'>
+                                <!-- sepia  on hover<br> -->
+                                <img src="http://lorempixel.com/150/150/" class="spa-hov" style='width:60%' >
+                            </div>
+                        </div>
+                    </div>
+                    
+               </div>
+
+               <!-- <div class='row'>
+                   <div class=' 1 col'>
+                      opacity on hover<br>
+                      <img src="http://lorempixel.com/150/150/" class="opc-hov" style='width:60%' >
+                   </div>
+                   <div class='1 col'>
+                      grayscale on hover <br>
+                      <img src="http://lorempixel.com/150/150/" class="gscl-hov" style='width:60%' >
+                   </div>
+                   <div class='1 col'>
+                      sepia  on hover<br>
+                      <img src="http://lorempixel.com/150/150/" class="spa-hov" style='width:60%' >
+                   </div>
+              </div> -->
+
+            </div>
             
     </div>
 
 
-    <p><h2>Modal/Toast/Sider</h2></p>
+    <p><h2>Modal/Sider/Toast</h2></p>
     <div>
-        <button class='primary ' onclick='showModal("modal1")'>Modal from static Content</button>
-        <button class='primary ' onclick='showModal("","Hello","Title","sm","anm-top")'>Modal with Dynamic Content</button>
-        <button class='primary ' onclick='showModal("","Hello","Title","full","anm-top")'>Modal Full</button>
-        <button class='info' onclick="showToast('this is a <i>toast</i> <br>')">Toast</button>
-        <button class='succ' onclick="showSide('left-sider')">Left Sider</button>
+        <button class='primary ' onclick='showModal("example_modal")'>Modal</button>
+        <!-- <button class='primary ' onclick='showModal("",{body:"dynamic content <br> ",title:"Title",size:"sm",effect:"anm-top"})'>Modal</button> -->
+        <button class='primary ' onclick='showModal("",{body:"Hello",title:"Title",size:"full",effect:"anm-top"})'>Modal Full</button> 
+        <button class='primary ' onclick='showModal("",{type:"img",src:"https://lorempixel.com/600/400/nature/?"+rand()})'>Modal image</button>
+        <button class='primary ' onclick='showModal("",{type:"iframe",src:"https://www.youtube.com/embed/tgbNymZ7vqY?controls=0"})'>Youtube Video</button>
+        <button class='succ' onclick="showSide('left-sider')">Left Sider</button> 
         <button class='succ' onclick="showSide('right-sider')">Right Sider</button>
+        <button class='warn' onclick="showToast('this is a <i>toast</i> <br>')"> Toast </button> 
     </div>
     
-    <div class='overlay' id='modal1'>
+    <div class='overlay' id='example_modal'>
         <div class='modal sm' >
             <div class='content rounded'>
                 <a class='close'></a>
@@ -511,13 +579,12 @@
                 <div class='body'>
                     modal body ... 
                     <br>
-                    <button onclick='closeSide("modal1")'  >Close</button>
+                    <button onclick='closeSide("example_modal")'  >Close</button>
                 </div>
             </div>
         </div>
     </div>
     
-
     <p><h2>Card</h2></p>
     <div class=row>
         <div class='col'>
