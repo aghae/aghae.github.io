@@ -18,7 +18,7 @@
         }
 
         :root{
-            --default-font:  irsans ;
+            --default-font:  sans , irsans ;
         }
 
         p + h2 {
@@ -43,7 +43,7 @@
 
                     <ul class="collapsibleList light">
                         <li>
-                         <input type="checkbox" id="mylist-node1" />
+                         <input type="checkbox" id="mylist-node1"  name='colaps1'/>
                          <label for="mylist-node1">Click to open list 1</label>
                          
                          <ul>
@@ -61,7 +61,7 @@
                          </ul>
                         </li>
                         <li>
-                          <input type="checkbox" id="mylist-node11" />
+                          <input type="checkbox" id="mylist-node11"  name='colaps1'/>
                           <label for="mylist-node11">Click to open list 2</label>
                          
                          <ul>
@@ -80,7 +80,7 @@
         </div>
     </div>
 
-    <div class='overlay' id='right-sider'>
+    <div class='overlay'  id='right-sider'>
         <div class='side right anm-right' >
             <div class='body'>This is right side</div>
         </div>
@@ -100,7 +100,7 @@
         <li><a href="#">Nav Link</a></li>
         <li><a href="#" class="nav-active">MultiLevel</a>
             <ul>
-            <li><a href="#">Sub Nav Link</a></li>
+            <li> <a href="#">Sub Nav Link</a></li>
             <li><a href="#">Sub Nav Link</a>
                 <ul>
                 <li><a href="#">Sub Sub Nav Link</a></li>
@@ -254,7 +254,7 @@
             <span class='color-dark'>dark </span> , 
             <span class='color-light'>light </span> 
             
-            <br><p><b>code (highlited by prism):</b>
+            <br><p><b>code :</b>
 
             </p>
             <pre>
@@ -302,6 +302,7 @@
     </div>
 
     <p><h2>Position Area</h2></p>
+  
     <div class='row'>
         <div class='col'>
             <div class='pos' style='height:250px;background: rgb(240, 239, 239)'>
@@ -310,7 +311,14 @@
                 <div class='tr'>top-right</div>
                 <div class='ml'>mid-left</div>
                 <div class='mc hide-onhover '><h4  style='color:orangered'>Hover me</h4></div>
-                <div class='mc show-onhover anm-fadeout '><h4>mid-center</h4></div>
+                <!-- <div class='mc show-onhover anm-fadeout '><h4>mid-center</h4></div> -->
+                <div class='pos mc show-onhover full'>
+                    <div class='warn  full anm-bot'>
+                        <div class='mc'>
+                            <h4>Slide Up ;)</h4>
+                        </div>
+                    </div>
+                </div>
                 <div class='mr'>mid-right</div>
                 <div class='bl'>bot-left</div>
                 <div class='bc'>bot-center </div>
@@ -331,19 +339,35 @@
     <div class='row'>
         <div class='col'>
             <p><h2>Slides</h2></p>
-            <div id='myslide' class='pos'>
-                <div class='slide  info'   style='height:150px'><div class='mc txt-center '><h3>Slide1</h3></div></div>
-                <div class='slide  warn'   style='height:150px'><div class='mc txt-center '><h3>Slide2</h3></div></div>
-                <div class='slide  danger' style='height:150px'><div class='mc txt-center '><h3>Slide3</h3></div></div>
-                <div class='slide  light'  style='height:150px'><div class='mc txt-center '><h3>Slide4</h3></div></div>
-                <div class='slide  dark'   style='height:150px'><div class='mc txt-center '><h3>Slide5</h3></div></div>
+            <div id='myslide' class='slides' delay='5000'>
+                
+                <div class='slide anm-fadeout' caption='image slide caption' >
+                    <img src='https://picsum.photos/600/400'>
+                </div>
 
-                <div class='ml show-onhover'><button onclick='prevSlide("myslide")' class='opc'>&lt;</button></div>
-                <div class='mr show-onhover'><button onclick='nextSlide("myslide")' class='opc'>&gt;</button> </div>
+
+                <div class='slide anm-left' caption='animated styled caption with html content <br> <b>Bold</b> <i>Italic</i>
+                                                     <a href="#">Link</a> <mark>mark</mark> 
+                                                     <span class="tag warn">Tag</span>
+                                                     <button class="succ">Button</button>
+                                                     '  caption_class='color-warn dark  anm-bot '>
+                                            
+                    <div class='mc txt-center'>
+                        <h3>With styled caption</h3>
+                    </div>
+                </div>
+
+                <div class='slide  warn anm-left' caption='hoverable caption'  caption_class='show-onhover danger anm-left'>
+                    <div class='mc txt-center p'>
+                        <h3>hover me to show caption</h3>
+                    </div>
+                </div>
+
+                <div class='slide  danger anm-fadeout'>
+                    <div class='mc txt-center'><h3>simple styled fadeout animated slide</h3></div>
+                </div>
+
             </div>
-            <script language='javascript'>
-                showSlide('myslide')
-            </script>
         </div>
         <div class='col'>
             <p><h2>Buttons</h2></p>
@@ -379,7 +403,7 @@
                 First Tab Content ...
                 </div>
                 
-                <input type="radio" name="tabs" id="tab2"><label for="tab2">Second Tab</label>
+                <input type="radio" name="tabs" id="tab2"><label for="tab2" >Second Tab</label>
                 <div class="tab">
                 Second Tab Content ...
                 </div>
@@ -388,14 +412,18 @@
                 <div class="tab">
                 Third Tab Content ...
                 </div>
+                <input type="radio" name="tabs" id="tab3"><label for="tab3" class='disabled'>Disabled</label>
+                <div class="tab">
+                Fourth Tab Content ...
+                </div>
 
             </div>
     </div> 
     <div class='col'>
-        <p><h2>Collapsive Menu</h2></p>
+        <p><h2>Collapsive Menu</h2></p>  
         <ul class="collapsibleList light">
             <li>
-            <input type="checkbox" id="node1" />
+            <input type="checkbox" id="node1"  name='colps1'/>
             <label for="node1">Click to open list 1</label>
             <ul>
             <li>Item 1</li>
@@ -412,7 +440,7 @@
             </ul>
             </li>
             <li>
-            <input type="checkbox" id="node2"  />
+            <input type="checkbox" id="node2"  name='colps1' />
             <label for="node2">Click to open list 2</label>
             
             <ul>
@@ -437,13 +465,6 @@
         </div>
     </div> | 
 
-    <div class='drop right' >
-        <label> Dropdown(Right)</label>
-        <div class='content'>
-            this is drop down content ....
-        </div>
-    </div> | 
-
     <div class='drop click' >
         <input type='checkbox' id='lnkclk'><label for='lnkclk'> click me</label>
         <div class='content'>
@@ -451,6 +472,13 @@
         </div>
     </div> | 
     
+    <div class='drop right' >
+        <label> Dropdown(Right)</label>
+        <div class='content'>
+            this is drop down content ....
+        </div>
+    </div> | 
+
     <div class='drop full' >
         <label>Dropdown(Full)</label> 
         <div class='content'>
@@ -471,15 +499,12 @@
 
 
     <p><h2>Images</h2></p>
-     <div class='row pt'>
+    <div class='row pt'>
             <div class='col'>
                 Avatars: <br>
                     <img src="https://picsum.photos/50" class="circle">
                     <img src="https://picsum.photos/80" class="circle ">
                     <img src="https://picsum.photos/90" class="circle thumb">
-
-                
-                
             </div>
             <div class='col'>
                 thumb image <br>
@@ -506,56 +531,45 @@
                         <div class='row'>
                             <div class=' 1 col'>
                             opacity <br>
-                            <img src="http://lorempixel.com/150/150/" class="opc" style='width:60%' >
+                            <img src="https://picsum.photos/200/200/" class="opc resp" style='width:60%' >
                             </div>
                             <div class='1 col'>
                             grayscale <br>
-                            <img src="http://lorempixel.com/150/150/" class="gscl" style='width:60%' >
+                            <img src="https://picsum.photos/200/200/" class="gscl resp" style='width:60%' >
                             </div>
                             <div class='1 col'>
                             sepia <br>
-                            <img src="http://lorempixel.com/150/150/" class="spa" style='width:60%' >
+                            <img src="https://picsum.photos/200/200/" class="spa resp" style='width:60%' >
                             </div>
                      </div>
                     </div>
+                </div>
+                 <div class='row'>    
                     <div class='col'>
                         hover on bellow images for effect
                         <div class='row'>
                             <div class=' 1 col'>
                                 <!-- opacity on hover<br> -->
-                                <img src="http://lorempixel.com/150/150/" class="opc-hov" style='width:60%' >
+                                <img src="https://picsum.photos/200/200/" class="opc-hov resp" style='width:60%' >
                             </div>
                             <div class='1 col'>
                                 <!-- grayscale  <br> -->
-                                <img src="http://lorempixel.com/150/150/" class="gscl-hov" style='width:60%' >
+                                <img src="https://picsum.photos/200/200/" class="gscl-hov resp" style='width:60%' >
                             </div>
                             <div class='1 col'>
                                 <!-- sepia  on hover<br> -->
-                                <img src="http://lorempixel.com/150/150/" class="spa-hov" style='width:60%' >
+                                <img src="https://picsum.photos/200/200/" class="spa-hov resp" style='width:60%' >
                             </div>
                         </div>
                     </div>
                     
                </div>
 
-               <!-- <div class='row'>
-                   <div class=' 1 col'>
-                      opacity on hover<br>
-                      <img src="http://lorempixel.com/150/150/" class="opc-hov" style='width:60%' >
-                   </div>
-                   <div class='1 col'>
-                      grayscale on hover <br>
-                      <img src="http://lorempixel.com/150/150/" class="gscl-hov" style='width:60%' >
-                   </div>
-                   <div class='1 col'>
-                      sepia  on hover<br>
-                      <img src="http://lorempixel.com/150/150/" class="spa-hov" style='width:60%' >
-                   </div>
-              </div> -->
+              
 
             </div>
             
-    </div>
+    </div> 
 
 
     <p><h2>Modal/Sider/Toast</h2></p>
@@ -563,7 +577,7 @@
         <button class='primary ' onclick='showModal("example_modal")'>Modal</button>
         <!-- <button class='primary ' onclick='showModal("",{body:"dynamic content <br> ",title:"Title",size:"sm",effect:"anm-top"})'>Modal</button> -->
         <button class='primary ' onclick='showModal("",{body:"Hello",title:"Title",size:"full",effect:"anm-top"})'>Modal Full</button> 
-        <button class='primary ' onclick='showModal("",{type:"img",src:"https://lorempixel.com/600/400/nature/?"+rand()})'>Modal image</button>
+        <button class='primary ' onclick='showModal("",{type:"img",src:"https://picsum.photos/600/400?"+rand()})'>Modal image</button>
         <button class='primary ' onclick='showModal("",{type:"iframe",src:"https://www.youtube.com/embed/tgbNymZ7vqY?controls=0"})'>Youtube Video</button>
         <button class='succ' onclick="showSide('left-sider')">Left Sider</button> 
         <button class='succ' onclick="showSide('right-sider')">Right Sider</button>
@@ -589,7 +603,7 @@
     <div class=row>
         <div class='col'>
             <div class='card' >
-                <h4>Card Title</h4>
+                <h3>Card Title</h3>
                 <img src="https://via.placeholder.com/150" class='resp'>
                 <p>Here is some text that generally describes the card, or something about it.</p>
                 <button class="btn dim" >Okay</button>
@@ -598,7 +612,7 @@
         </div>
         <div class='col'>
             <div class='card' >
-                <h4>Card Title</h4>
+                <h3>Card Title</h3>
                 <p>Here is some text that generally describes the card, or something about it.</p>
                 <button class="btn dim" >Okay</button>
                 <button class="btn primary">Cancel</button>
@@ -611,7 +625,7 @@
                 <button class="btn dim right" >Okay</button>
                 <button class="btn primary right">Cancel</button>
                 <img src="https://via.placeholder.com/150" class='resp mt'>
-                <h4>Card Title</h4>
+                <h3>Card Title</h3>
                 <p>Here is some text that generally describes the card, or something about it.</p>
             </div>
         </div>
@@ -628,7 +642,7 @@
   
 
     <p><h2>Table</h2></p>
-    <table class='w100 resp'>
+    <table class='resp w100'>
         <caption>Table (Responsive Mobile View)</caption>
         <thead>
             <tr>
@@ -654,10 +668,12 @@
         </tbody>
     </table>
 
-    <br><br>
+    <br>
+    <center><b>Table (horizontal Scrollable)</b></center>
+    <br>
     <div class='overflow-x'>
-    <table class='w100'>
-        <caption>Table (Scrollable)</caption>
+    <table class='w100' >
+        <!-- <caption>Table (horizontal Scrollable)</caption> -->
         <thead>
             <tr>
                 <th>Name</th>
@@ -665,6 +681,9 @@
                 <th>Tel</th>
                 <th>Email</th>
                 <th>Fax</th>
+                <th>Telegram</th>
+                <th>Instagram</th>
+                <th>Facebook</th>
             </tr>
         </thead>
         <tbody>
@@ -674,6 +693,9 @@
                 <td>A3</td>
                 <td>A4</td>
                 <td>A5</td>
+                <td>A6</td>
+                <td>A7</td>
+                <td>A8</td>
             </tr>
             <tr>
                 <td>B1</td>
@@ -681,13 +703,61 @@
                 <td>A3</td>
                 <td>A4</td>
                 <td>B5</td>
+                <td>B6</td>
+                <td>B7</td>
+                <td>B8</td>
             </tr>
         </tbody>
     </table>
     </div>
 
     <br><br>
-    <table class='w100 zebra '>
+    <table class='vscroll w100'  >
+        <caption>Table (vertical Scrollable)</caption>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Family</th>
+                <th>Tel</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>A1</td>
+                <td>A2</td>
+                <td>A3</td>
+                <td>A4</td>
+            </tr>
+            <tr>
+                <td>B1</td>
+                <td>B2</td>
+                <td>A3</td>
+                <td>A4</td>
+            </tr>
+            <tr>
+                <td>B1</td>
+                <td>B2</td>
+                <td>A3</td>
+                <td>A4</td>
+            </tr>
+            <tr>
+                <td>B1</td>
+                <td>B2</td>
+                <td>A3</td>
+                <td>A4</td>
+            </tr>
+            <tr>
+                <td>B1</td>
+                <td>B2</td>
+                <td>A3</td>
+                <td>A4</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br><br>
+    <table class='zebra w100 '>
         <caption>Zebra Like Table </caption>
         <thead>
             <tr>
@@ -716,10 +786,11 @@
         <section>
             <label for="">Name:</label>
             <div>
-                <input> / 
+                <input>
+                 Or
                 <div class='input-help'>
-                    <input id='wh' class='warn'>
-                    <label for="wh" class='color-warn'>this is a help for input</label>  
+                    <input id='wh'>
+                    <label for="wh">this is a help for input</label>  
                 </div>
             </div> 
         </section>
@@ -786,6 +857,18 @@
             <input class='dark' value='dark'>
             <input class='disabled' value='disabled'>  <br>
 
+            <div class='form'>
+                <section>
+                    <div class='input-help'>
+                        <input id='wh' class='danger'>
+                        <label for="wh" class='color-danger'>Error messge</label>  
+                    </div>
+                    <div class='input-help'>
+                        <input id='wh' class='succ'>
+                        <label for="wh" class='color-succ'>success</label>  
+                    </div>
+                </section>
+            </div>
 
             <input type="text" class='small' value='small'> 
             <input type="text"  value='Normal'> 
@@ -866,22 +949,26 @@
 
         <hr>
         <p>
-            <label  class='small'><input type="radio" name="radio-test">small</label>
-            <label><input type="radio" name="radio-test">Normal</label>
-            <label  class='medium'><input type="radio" name="radio-test">Medium</label>
-            <label  class='large'><input type="radio"  name="radio-test">Large</label>
+            <div class='row'>
+                <div class='col'><label class='small'><input type="radio" name="radio-test">small</label></div>
+                <div class='col'><label><input type="radio" name="radio-test">Normal</label></div>
+                <div class='col'><label  class='medium'><input type="radio" name="radio-test">Medium</label></div>
+                <div class='col'><label  class='large'><input type="radio"  name="radio-test">Large</label></div>
+                <div class='col'></div>
+            </div>
+        
         </p>
 
         <hr>
         <p>
-            
-           
-            <label  class='small'><input type="checkbox">small</label>
-            <label><input type="checkbox" >Normal</label>
-            <label  class='medium'><input type="checkbox"  >Medium</label>
-            <label  class='large'><input type="checkbox"   >Large</label>
+            <div class='row'>
+                <div class='col'><label  class='small'><input type="checkbox">small</label></div>
+                <div class='col'><label><input type="checkbox" >Normal</label></div>
+                <div class='col'><label  class='medium'><input type="checkbox"  >Medium</label></div>
+                <div class='col'><label  class='large'><input type="checkbox"   >Large</label></div>
+              
+            </div>
         </p>
-
         
         
     </div>
