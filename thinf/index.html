@@ -18,7 +18,7 @@
         }
 
         :root{
-            --default-font:  sans , irsans ;
+            --default-font: sans ;
         }
 
         p + h2 {
@@ -32,14 +32,12 @@
 <body>
 
 <div class='container'>
-    <div class='overlay' id='left-sider'>
-        <div class='side  anm-left' >
-            <div class='body  thin-scroll' style='padding-top:0'>
-                    <!-- <div class='txt-right'><button style='margin:0' onclick='closeSide("left-sider")'>x</button></div> -->
-                    
-                    <a class='close' onclick='closeSide("left-sider")'></a>
-
-                    <p>Left Sider:  </p>
+    <div class='overlay' id='sider-example'>
+        <div class='side' >
+            <a class='close right' onclick='closeSide("sider-example")'></a>
+            <div class='body  thin-scroll'>
+                   
+                    Left Sider: 
 
                     <ul class="collapsibleList light">
                         <li>
@@ -80,14 +78,18 @@
         </div>
     </div>
 
-    <div class='overlay'  id='right-sider'>
-        <div class='side right anm-right' >
-            <div class='body'>This is right side</div>
+    <div class='overlay'  id='opsider-example'>
+        <div class='side opside' >
+            <a class='close' onclick='closeSide("opsider-example")'></a>
+            <div class='body'>
+                This is right side <br>
+                <button onclick='closeSide("opsider-example")'>Close me</button>
+            </div>
         </div>
     </div>
 
     <a href="https://github.com/aghae/thinf"  class='btn right'>Github</a>
-    <a href="index-rtl.html"  class='btn right'>RTL</a>
+    <a href="index-rtl.html"  class='btn right'>RightToLeft</a>
     
     
     <h3 class='p light'>
@@ -339,31 +341,35 @@
     <div class='row'>
         <div class='col'>
             <p><h2>Slides</h2></p>
-            <div id='myslide' class='slides' delay='5000'>
+            <div id='myslide' class='slides' delay='3000' style='height:300px'>
                 
-                <div class='slide anm-fadeout' caption='image slide caption' >
-                    <img src='https://picsum.photos/600/400'>
+                <div class='slide anm-fadeout' caption='image slide caption'>
+                    <img src='https://picsum.photos/600/300'>
                 </div>
 
 
-                <div class='slide anm-left' caption='animated styled caption with html content <br> <b>Bold</b> <i>Italic</i>
-                                                     <a href="#">Link</a> <mark>mark</mark> 
+                <div class='slide primary anm-left' caption='animated styled caption with html content  <br>
+                                                     <b>Bold</b> <i>Italic</i>
+                                                     <a href="#">Link</a>
+                                                     <mark>mark</mark> 
                                                      <span class="tag warn">Tag</span>
                                                      <button class="succ">Button</button>
-                                                     '  caption_class='color-warn dark  anm-bot '>
+                                                     '  
+                                            caption_class='anm-bot '>
                                             
-                    <div class='mc txt-center'>
+                    <div class='mt txt-center'>
+                        <br>
                         <h3>With styled caption</h3>
                     </div>
                 </div>
 
                 <div class='slide  warn anm-left' caption='hoverable caption'  caption_class='show-onhover danger anm-left'>
-                    <div class='mc txt-center p'>
+                    <div class='mc txt-center'>
                         <h3>hover me to show caption</h3>
                     </div>
                 </div>
 
-                <div class='slide  danger anm-fadeout'>
+                <div class='slide  danger  anm-fadeout'>
                     <div class='mc txt-center'><h3>simple styled fadeout animated slide</h3></div>
                 </div>
 
@@ -457,25 +463,12 @@
     
     
     <p><h2>Dropdown</h2></p>
+    
     <div class='drop'>
         <label>dropdown</label>
         <div class='content'>
             this is drop down content <br>
             ddd
-        </div>
-    </div> | 
-
-    <div class='drop click' >
-        <input type='checkbox' id='lnkclk'><label for='lnkclk'> click me</label>
-        <div class='content'>
-            this is drop down content ....
-        </div>
-    </div> | 
-    
-    <div class='drop right' >
-        <label> Dropdown(Right)</label>
-        <div class='content'>
-            this is drop down content ....
         </div>
     </div> | 
 
@@ -488,12 +481,25 @@
         </div>
     </div> |
 
-   
+    <div class='drop right opside' >
+        <label> Dropdown(Right)</label>
+        <div class='content'>
+            this is drop down content ....
+        </div>
+    </div> | 
+
+     
+    <!-- <div class='drop click' >
+        <input type='checkbox' id='lnkclk'><label for='lnkclk'> click me</label>
+        <div class='content'>
+            this is drop down content ....
+        </div>
+    </div> | -->
   
     <div class='drop click' >
         <input type="text"  value='click me' style='z-index:100 !important'>
         <div class='content'>
-            I created after you clicked ;)
+            You create me after click ;)
         </div>
     </div> 
 
@@ -575,24 +581,23 @@
     <p><h2>Modal/Sider/Toast</h2></p>
     <div>
         <button class='primary ' onclick='showModal("example_modal")'>Modal</button>
-        <!-- <button class='primary ' onclick='showModal("",{body:"dynamic content <br> ",title:"Title",size:"sm",effect:"anm-top"})'>Modal</button> -->
-        <button class='primary ' onclick='showModal("",{body:"Hello",title:"Title",size:"full",effect:"anm-top"})'>Modal Full</button> 
-        <button class='primary ' onclick='showModal("",{type:"img",src:"https://picsum.photos/600/400?"+rand()})'>Modal image</button>
+        <!-- <button class='primary ' onclick='showModal("",{body:"dynamic content <br> ",title:"Title",size:"sm",effect:"anm-top"})'>Daynamic Modal</button> -->
+        <button class='primary ' onclick='showModal("",{body:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus scelerisque lorem elit, id ornare dui mattis nec. Phasellus luctus lorem et placerat ornare. Sed in vehicula dui, non feugiat magna. Aliquam et porttitor eros. Proin sit amet fermentum risus, et fringilla felis. Aliquam erat volutpat. Quisque a sapien odio. Vivamus in orci vitae nisl tempor scelerisque a in metus. Mauris nisl lorem, dignissim at leo ac, lobortis tristique tellus. Maecenas at tellus elit.Morbi libero elit, tincidunt et lorem vitae, suscipit posuere massa. Vivamus non nisl at augue molestie tincidunt at ac lorem. Aenean cursus nisi et posuere hendrerit. Etiam sollicitudin, ipsum sit amet venenatis egestas, dolor enim dapibus urna, a consectetur odio sapien pellentesque ante. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam sodales velit nec leo efficitur, vitae sagittis arcu varius. Duis ultricies magna vel leo ornare sodales hendrerit et mauris. Donec nec fermentum velit. Vivamus sollicitudin vitae magna ac tristique. Proin imperdiet, elit sit amet tristique commodo, lectus urna commodo nibh, ut aliquet massa dolor in mauris. Integer egestas libero non finibus consequat.Suspendisse egestas faucibus lacinia. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus ullamcorper fringilla ligula lobortis mattis. In elit lacus, sodales ut mauris sed, posuere interdum nunc. Proin id nisl sed lectus vulputate scelerisque ullamcorper ac dolor. Nullam sit amet augue sed magna iaculis convallis quis id nibh. Donec gravida non sapien id dictum. Duis mattis eu ex eget fermentum.Sed ac ipsum interdum, tempus sem eu, ornare erat. Vestibulum a lacus eget lectus mollis eleifend. Praesent tristique gravida egestas. Morbi id feugiat urna, nec tincidunt odio. Maecenas sit amet justo sem. Integer auctor odio sit amet urna accumsan imperdiet. Phasellus ullamcorper lacinia convallis. Phasellus convallis ipsum et efficitur feugiat. Integer gravida imperdiet nunc ac mollis. Suspendisse potenti. Mauris ornare egestas dignissim. Vestibulum suscipit tortor dignissim, vestibulum nisi quis, placerat metus. Praesent vel turpis viverra, molestie est at, molestie augue. Donec semper, nisl sed bibendum eleifend, felis nulla mattis arcu, ut dictum eros erat vitae orci.Donec bibendum dictum libero, at blandit urna tempus quis. Duis nibh nisi, hendrerit vitae posuere congue, condimentum eget turpis. Nam eget sodales sapien, dignissim eleifend nisi. Etiam et leo eros. Donec vestibulum, orci ac imperdiet hendrerit, lectus lorem malesuada nibh, vitae pulvinar eros mauris et nibh. Praesent egestas augue lorem, at elementum ipsum laoreet sed. Ut id lacinia risus.Maris ut justo id dolor porttitor dictum. Proin mollis suscipit erat pellentesque molestie. Mauris lacinia ut velit quis vehicula. Aliquam scelerisque mauris sit amet aliquet rutrum. Curabitur est nisl, pharetra dictum diam nec, laoreet eleifend mi. Mauris eleifend rhoncus aliquet. Curabitur id elit efficitur, mattis nunc venenatis, consectetur metus. Praesent lobortis tortor felis, volutpat rhoncus orci porta tincidunt. Mauris elementum urna auctor lacus lobortis pretium. Donec dignissim semper urna, nec maximus libero dignissim vitae. Morbi pulvinar elit sed quam dictum vulputate. Vestibulum semper est ut turpis mattis, eu fringilla nulla auctor.Nullam bibendum massa sit amet est aliquam lobortis. Suspendisse commodo, risus nec vestibulum dictum, mi enim gravida ipsum, egestas commodo ipsum arcu id nunc. Maecenas porta ultricies turpis sed ullamcorper. Nulla ac dolor dui. Integer et dolor non felis eleifend varius vitae eget neque. Nulla facilisi. Donec at tincidunt lorem. Nulla interdum ligula non eros facilisis, nec molestie diam accumsan. Sed id nunc a turpis vehicula viverra. Donec ut nulla quis lectus tincidunt venenatis eu et nunc. Aenean ullamcorper metus non tortor venenatis, eget interdum massa ullamcorper. Nam sed consequat odio. Sed porttitor augue sed nibh placerat, et maximus lacus varius. Integer et imperdiet lorem. Aenean fringilla vestibulum sapien nec tempus.Suspendisse nec ipsum nec odio lobortis placerat. Aliquam vel tempor leo. Mauris mattis luctus magna pharetra viverra. In non nibh erat. Sed vehicula nulla mauris, ornare vulputate mauris cursus sed. Duis vitae dapibus lorem. Ut in sapien elit. Nunc sit amet facilisis elit.",title:"Title",size:"full",effect:"anm-top"})'>Modal Full</button> 
+        <button class='primary ' onclick='showModal("",{type:"img",src:"https://picsum.photos/600/800?"+rand()})'>Modal image</button>
         <button class='primary ' onclick='showModal("",{type:"iframe",src:"https://www.youtube.com/embed/tgbNymZ7vqY?controls=0"})'>Youtube Video</button>
-        <button class='succ' onclick="showSide('left-sider')">Left Sider</button> 
-        <button class='succ' onclick="showSide('right-sider')">Right Sider</button>
+        <button class='succ' onclick="showSide('sider-example')">Sider</button> 
+        <button class='succ' onclick="showSide('opsider-example')">Opposite Sider</button>
         <button class='warn' onclick="showToast('this is a <i>toast</i> <br>')"> Toast </button> 
+        <button class='warn' onclick="showToast('this is a <i>toast</i> <br>','2500','danger','br')"> Oppsite Toast  </button> 
     </div>
     
-    <div class='overlay' id='example_modal'>
-        <div class='modal sm' >
+    <div class='overlay ' id='example_modal'>
+        <div class='modal sm ' >
             <div class='content rounded'>
                 <a class='close'></a>
-                <div class='title'>Modal Title</div>
-                <hr>
+                <div class='title'>Title</div>
                 <div class='body'>
-                    modal body ... 
-                    <br>
+                    modal body ...  <br>
                     <button onclick='closeSide("example_modal")'  >Close</button>
                 </div>
             </div>
@@ -838,7 +843,9 @@
         </section>
 
         <div class=right>
-         <button>Submit</button>
+         
+         <a class='btn medium'>cancel</a>
+         <button class='medium'>Submit</button>
         </div>
 
     </div>
@@ -883,6 +890,7 @@
                     <option>Man</option>
                     <option>Woman</option>
                 </select>
+                
                 
                 <select class='primary'>
                     <option>Primary</option>
