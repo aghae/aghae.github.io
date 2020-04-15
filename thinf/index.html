@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>thinf(thin frontend framewrok) - demo</title>
-    <link href="dist/thinf.css" rel="stylesheet">
-    <script src='dist/thinf.js'></script>
+    <link href="thinf.css" rel="stylesheet">
+    <script src='thinf.js'></script>
 
     <!-- For highlight pre code -->
     <link href="https://cdn.jsdelivr.net/npm/prismjs@1.20.0/themes/prism.css" rel="stylesheet">
@@ -18,7 +18,7 @@
         }
 
         :root{
-            --default-font: sans ;
+            --default-font: 'Lato' ;
         }
 
         p + h2 {
@@ -92,9 +92,10 @@
     <a href="index-rtl.html"  class='btn right'>RightToLeft</a>
     
     
-    <h3 class='p light'>
-        thinf (thin frontend framework) - demo <br>
-    </h3>
+    <h2 class='p light'>
+        thinf <br>
+        <small>thin frontend framework </small><br>
+    </h2>
    
 
     <p><h2>Navigation</h2></p> 
@@ -291,16 +292,16 @@
     </div>
     <br>sized columns:
     <div class='row bordered-cols '>
-        <div class='1 col'>1</div>
-        <div class='2 col'>2</div>
-        <div class='col'>auto col</div>
-        <div class='4 col'>4</div>
-        <div class='2 col'>2</div>
-        <div class='6 col'>6</div>
-        <div class='5 col'>5</div>
-        <div class='4 col'>4</div>
-        <div class='3 col'>3</div>
-        <div class='2 col'>2</div>
+        <div class='1 col'>1 col</div>
+        <div class='2 col wrap'>2 col</div>
+        <div class='col mobile-hide'>col (Mobile Hide)</div>
+        <div class='4 col'>4 col</div>
+        <div class='2 col wrap'>2 col wrap</div>
+        <div class='3 col'>3 col</div>
+        <div class='6 col desktop-hide'>6 col (Desktop Hide)</div>
+        <div class='2 col'>2 col</div>
+        <div class='3 col tablet-hide'>3 col (Table Hide)</div>
+        <div class='2 col'>2 col</div>
     </div>
 
     <p><h2>Position Area</h2></p>
@@ -535,17 +536,17 @@
                 <div class='row'>
                     <div class='col'>
                         <div class='row'>
-                            <div class=' 1 col'>
+                            <div class=' 1 col wrap'>
                             opacity <br>
-                            <img src="https://picsum.photos/200/200/" class="opc resp" style='width:60%' >
+                            <img src="https://picsum.photos/150/150/" class="opc thumb"  >
                             </div>
-                            <div class='1 col'>
+                            <div class='1 col wrap'>
                             grayscale <br>
-                            <img src="https://picsum.photos/200/200/" class="gscl resp" style='width:60%' >
+                            <img src="https://picsum.photos/150/150/" class="gscl thumb "  >
                             </div>
-                            <div class='1 col'>
+                            <div class='1 col wrap'>
                             sepia <br>
-                            <img src="https://picsum.photos/200/200/" class="spa resp" style='width:60%' >
+                            <img src="https://picsum.photos/150/150/" class="spa thumb"  >
                             </div>
                      </div>
                     </div>
@@ -554,17 +555,17 @@
                     <div class='col'>
                         hover on bellow images for effect
                         <div class='row'>
-                            <div class=' 1 col'>
+                            <div class=' 1 col wrap'>
                                 <!-- opacity on hover<br> -->
-                                <img src="https://picsum.photos/200/200/" class="opc-hov resp" style='width:60%' >
+                                <img src="https://picsum.photos/150/150/" class="opc-hov thumb">
                             </div>
-                            <div class='1 col'>
+                            <div class='1 col wrap'>
                                 <!-- grayscale  <br> -->
-                                <img src="https://picsum.photos/200/200/" class="gscl-hov resp" style='width:60%' >
+                                <img src="https://picsum.photos/150/150/" class="gscl-hov thumb">
                             </div>
-                            <div class='1 col'>
+                            <div class='1 col wrap'>
                                 <!-- sepia  on hover<br> -->
-                                <img src="https://picsum.photos/200/200/" class="spa-hov resp" style='width:60%' >
+                                <img src="https://picsum.photos/150/150/" class="spa-hov thumb">
                             </div>
                         </div>
                     </div>
