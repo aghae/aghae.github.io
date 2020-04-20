@@ -12,18 +12,20 @@
     <script src='https://cdn.jsdelivr.net/npm/prismjs@1.20.0/prism.js' data-manual></script>
     
     <style>
-         @font-face {
+        /* 
+        @font-face {
             font-family: irsans;
             src: url('font/irsans.woff');
         }
 
         :root{
             --default-font:  irsans ;
-        }
+        } 
+        */
 
         p + h2 {
             background: skyblue ;
-            padding:.5em;margin:1em 0
+            padding: .2em .3em;
         }
 
 
@@ -157,7 +159,7 @@
     
     <p><h2>Typography</h2></p>
     <div class='row '>
-        <div class='col'>
+        <div class='2 col'>
             <b>Heading:</b><br>
             <div class='row'>
                 <div class='col'>
@@ -168,7 +170,7 @@
                     <h5>H5</h5>
                     <h6>H6</h6>
                 </div>
-                <div class='col'>
+                <div class='4 col'>
                     <h2>
                         Heading title <br>
                         <small>with subtitle</small>
@@ -178,7 +180,7 @@
             
             <b>List:</b><br>
             <div class='row'>
-                <div class='col'>
+                <div class='3 col'>
                     <!-- unstyled list -->
                     <span class='color-info'> styled :</span> 
                     <ul class='list'>
@@ -196,7 +198,7 @@
                     </ul>
                     
                 </div>
-                <div class='col'>
+                <div class='3 col'>
                    
                     <span class='color-info'> unstyled:</span> 
                     <ul class='list-unstyled'>
@@ -588,9 +590,9 @@
         <button class='primary ' onclick='showModal("",{type:"iframe",src:"https://www.youtube.com/embed/tgbNymZ7vqY?controls=0"})'>Youtube Video</button>
         <button class='succ' onclick="showSide('sider-example')">Sider</button> 
         <button class='succ' onclick="showSide('opsider-example')">Opposite Sider</button>
-        <button class='warn' onclick="showToast('this is a <i>toast</i> <br>')"> Toast </button> 
-        <button class='warn' onclick="showToast('this is a <i>toast</i> <br>',2500,'danger','br')"> Oppsite Toast</button> 
-    </div>
+        <button class='warn' onclick="showToast('this is a <i>toast</i> with html content <br> <span class=danger>danger</span> <mark>mark</mark> <em>Italic</em> <strong>Strong<strong> ...')"> Toast </button> 
+        <button class='warn' onclick="showToast('this is a <i>toast</i> <br>','2500','danger','br')"> Oppsite Toast  </button> 
+        </div>
     
     <div class='overlay' id='example_modal'>
         <div class='modal sm' >
