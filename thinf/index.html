@@ -13,13 +13,14 @@
     
     <style>
 
-        /* :root{
+        :root{
             --default-font: lato ;
-        } */
+        }
 
         p + h2 {
-            background: skyblue ;
+            background: rgb(212, 226, 252) ;
             padding: .2em .3em;
+            border-top:2px solid lightblue ;
         }
 
 
@@ -165,20 +166,34 @@
                     <h5>H5</h5>
                     <h6>H6</h6>
                 </div>
-                <div class='4 col'>
-                    <h2>
-                        Heading title 
-                        <small>following ..</small>
-                    </h2>
+                <div class='2 col wrap'>
+                    <h1> H1 <small>small ..</small> </h1>
+                    <h2> H2 <small>small ..</small> </h2>
+                    <h3> H3 <small>small ..</small> </h3>
+                    <h4> H4 <small>small ..</small> </h4>
+                    <h5> H5 <small>small ..</small> </h5>
+                    <h6> H6 <small>small ..</small> </h6>
+              
                     
                 </div>
+                
+                <div class='col wrap'>
+                    <h3 class='font-heavy'>font-heavy</h3>
+                    <h3>font-regular</h3>
+                    <h3 class='font-light'>font-light</h3>
+                    <h3 class='font-lighter'>font-lighter</h3>
+                    
+                    
+                </div>
+
+               
             </div>
 
             <p>
                 <b>List:</b>
             </p>
             <div class='row'>
-                <div class='3 col'>
+                <div class='2 col'>
                     <!-- unstyled list -->
                     <span class='color-info'>styled :</span> 
                     <ul class='list'>
@@ -196,7 +211,7 @@
                     </ul>
                     
                 </div>
-                <div class='3 col'>
+                <div class='2 col'>
                    
                     <span class='color-info'>unstyled:</span> 
                     <ul class='list-unstyled'>
@@ -213,6 +228,27 @@
                         <li>item</li>
                     </ul>
                 </div>
+
+                <div class='2 col wrap'>
+                   
+                    <span class='color-info'>Ordered:</span> 
+                    <ol class=''>
+                        <li>item</li>
+                        <li>item
+                            <ul>
+                                <li>sub </li>
+                                <li>sub </li>
+                                <li>sub </li>
+                                <li>sub </li>
+                            </ul>
+                        </li>
+                        <li>item</li>
+                        <li>item</li>
+                    </ol>
+                </div>
+                
+               
+
 
                 
             </div>
@@ -330,9 +366,9 @@
         </div>
         <div class='col'>
             <div class='pos primary ' style='height:250px'>
-                <div class='mc txt-center '>
-                    <h2>This is hero</h2>
-                    <h4>made by position area</h4>
+                <div class='mc txt-center color-white '>
+                    <h2 class="color-white">This is hero</h2>
+                    <h4 class='color-warn'>made by position area</h4>
                 </div>
             </div>
         </div>
@@ -342,7 +378,7 @@
     <div class='row'>
         <div class='col'>
             <p><h2>Slides</h2></p>
-            <div id='myslide' class='slides' delay='3000' style='height:300px'>
+            <div id='myslide' class='slides' delay='5000' style='height:300px'>
                 
                 <div class='slide anm-fadeout' caption='image slide caption'>
                     <img src='https://picsum.photos/600/300'>
@@ -356,22 +392,23 @@
                                                      <span class="tag warn">Tag</span>
                                                      <button class="succ">Button</button>
                                                      '  
-                                            caption_class='anm-bot '>
+                                                    caption_class='anm-bot'>
                                             
-                    <div class='mt txt-center'>
-                        <br>
+                    <div class='mt p txt-center'>
                         <h3>With styled caption</h3>
                     </div>
                 </div>
 
-                <div class='slide  warn anm-left' caption='hoverable caption'  caption_class='show-onhover danger anm-left'>
-                    <div class='mc txt-center'>
+                <div class='slide  warn anm-left' caption='hoverable caption'  caption_class='show-onhover  anm-bot'>
+                    <div class='mc txt-center '>
                         <h3>hover me to show caption</h3>
                     </div>
                 </div>
 
                 <div class='slide  danger  anm-fadeout'>
-                    <div class='mc txt-center'><h3>simple styled fadeout animated slide</h3></div>
+                    <div class='mc txt-center'>
+                        <h3 class='color-white'>simple styled fadeout animated slide</h3>
+                    </div>
                 </div>
 
             </div>
@@ -482,7 +519,7 @@
         </div>
     </div> |
 
-    <div class='drop right opside' >
+    <div class='drop opside' >
         <label> Dropdown(Right)</label>
         <div class='content'>
             this is drop down content ....
@@ -673,7 +710,7 @@
     </table>
 
     <br>
-    <center><b>Table (horizontal Scrollable)</b></center>
+    <center><strong class='font-heavy'>Table (horizontal Scrollable)</b></strong></center>
     <br>
     <div class='overflow-x'>
     <table class='w100' >
@@ -785,7 +822,7 @@
     </table>
 
     <p><h2>Form</h2></p>
-    <div class='form zebra'>   
+    <div class='form'>   
 
         <section>
             <label for="">Name:</label>
@@ -818,7 +855,7 @@
         </section>
 
         <section>
-            <label for="favs" class='top'>Favorites :</label>
+            <label for="favs">Favorites:</label>
             <div id='favs'> 
                 <input type='checkbox' name='rd1' value=1 >Reading  Newspaper <br>
                 <input type='checkbox' name='rd1' value=2>Watch TV <br>
@@ -827,7 +864,7 @@
         </section> 
 
         <section>
-            <label for='upld' class='top'>Upload:</label> 
+            <label for='upld'>Upload:</label> 
             <div id='upld'> 
                 <input id='file1' type="file" class='file' multiple>
                 <label for='file1'>choose a file ... </label> 
@@ -837,8 +874,8 @@
         </section>
 
         <section>
-            <label class='top'>Description:</label>
-            <div><textarea class='w100' rows=5 ></textarea></div> 
+            <label>Description:</label>
+            <div><textarea class='w100' rows=5 style='width:100% !important;'></textarea></div> 
         </section>
 
         <div class=right>

@@ -12,20 +12,15 @@
     <script src='https://cdn.jsdelivr.net/npm/prismjs@1.20.0/prism.js' data-manual></script>
     
     <style>
-        /* 
-        @font-face {
-            font-family: irsans;
-            src: url('font/irsans.woff');
-        }
 
         :root{
-            --default-font:  irsans ;
-        } 
-        */
+            --default-font: lato ;
+        }
 
         p + h2 {
-            background: skyblue ;
+            background: rgb(212, 226, 252) ;
             padding: .2em .3em;
+            border-top:2px solid lightblue ;
         }
 
 
@@ -159,10 +154,11 @@
     
     <p><h2>Typography</h2></p>
     <div class='row '>
-        <div class='2 col'>
+        <div class='col'>
+         
             <b>Heading:</b><br>
             <div class='row'>
-                <div class='col'>
+                <div class='2 col'>
                     <h1>H1</h1>
                     <h2>H2</h2>
                     <h3>H3</h3>
@@ -170,19 +166,36 @@
                     <h5>H5</h5>
                     <h6>H6</h6>
                 </div>
-                <div class='4 col'>
-                    <h2>
-                        Heading title <br>
-                        <small>with subtitle</small>
-                    </h2>
+                <div class='2 col wrap'>
+                    <h1> H1 <small>small ..</small> </h1>
+                    <h2> H2 <small>small ..</small> </h2>
+                    <h3> H3 <small>small ..</small> </h3>
+                    <h4> H4 <small>small ..</small> </h4>
+                    <h5> H5 <small>small ..</small> </h5>
+                    <h6> H6 <small>small ..</small> </h6>
+              
+                    
                 </div>
+                
+                <div class='col wrap'>
+                    <h3 class='font-heavy'>font-heavy</h3>
+                    <h3>font-regular</h3>
+                    <h3 class='font-light'>font-light</h3>
+                    <h3 class='font-lighter'>font-lighter</h3>
+                    
+                    
+                </div>
+
+               
             </div>
-            
-            <b>List:</b><br>
+
+            <p>
+                <b>List:</b>
+            </p>
             <div class='row'>
-                <div class='3 col'>
+                <div class='2 col'>
                     <!-- unstyled list -->
-                    <span class='color-info'> styled :</span> 
+                    <span class='color-info'>styled :</span> 
                     <ul class='list'>
                         <li>item</li>
                         <li>item
@@ -198,9 +211,9 @@
                     </ul>
                     
                 </div>
-                <div class='3 col'>
+                <div class='2 col'>
                    
-                    <span class='color-info'> unstyled:</span> 
+                    <span class='color-info'>unstyled:</span> 
                     <ul class='list-unstyled'>
                         <li>item</li>
                         <li>item
@@ -215,6 +228,27 @@
                         <li>item</li>
                     </ul>
                 </div>
+
+                <div class='2 col wrap'>
+                   
+                    <span class='color-info'>Ordered:</span> 
+                    <ol class=''>
+                        <li>item</li>
+                        <li>item
+                            <ul>
+                                <li>sub </li>
+                                <li>sub </li>
+                                <li>sub </li>
+                                <li>sub </li>
+                            </ul>
+                        </li>
+                        <li>item</li>
+                        <li>item</li>
+                    </ol>
+                </div>
+                
+               
+
 
                 
             </div>
@@ -262,7 +296,7 @@
             <br><p><b>code :</b>
 
             </p>
-            <pre style='direction:ltr'>
+            <pre style='direction: ltr;'>
             <code class='prism language-js'>
     var a = 1   
     function jsfunc(a){
@@ -294,16 +328,16 @@
     </div>
     <br>sized columns:
     <div class='row bordered-cols '>
-        <div class='1 col'>1</div>
-        <div class='2 col'>2</div>
-        <div class='col'>auto col</div>
-        <div class='4 col'>4</div>
-        <div class='2 col'>2</div>
-        <div class='6 col'>6</div>
-        <div class='5 col'>5</div>
-        <div class='4 col'>4</div>
-        <div class='3 col'>3</div>
-        <div class='2 col'>2</div>
+        <div class='1 col'>1 col</div>
+        <div class='2 col wrap'>2 col</div>
+        <div class='col mobile-hide'>col (Mobile Hide)</div>
+        <div class='4 col'>4 col</div>
+        <div class='2 col wrap'>2 col wrap</div>
+        <div class='3 col'>3 col</div>
+        <div class='6 col desktop-hide'>6 col (Desktop Hide)</div>
+        <div class='2 col'>2 col</div>
+        <div class='3 col tablet-hide'>3 col (Table Hide)</div>
+        <div class='2 col'>2 col</div>
     </div>
 
     <p><h2>Position Area</h2></p>
@@ -332,9 +366,9 @@
         </div>
         <div class='col'>
             <div class='pos primary ' style='height:250px'>
-                <div class='mc txt-center '>
-                    <h2>This is hero</h2>
-                    <h4>made by position area</h4>
+                <div class='mc txt-center color-white '>
+                    <h2 class="color-white">This is hero</h2>
+                    <h4 class='color-warn'>made by position area</h4>
                 </div>
             </div>
         </div>
@@ -344,7 +378,7 @@
     <div class='row'>
         <div class='col'>
             <p><h2>Slides</h2></p>
-            <div id='myslide' class='slides' delay='3000' style='height:300px'>
+            <div id='myslide' class='slides' delay='5000' style='height:300px'>
                 
                 <div class='slide anm-fadeout' caption='image slide caption'>
                     <img src='https://picsum.photos/600/300'>
@@ -358,22 +392,23 @@
                                                      <span class="tag warn">Tag</span>
                                                      <button class="succ">Button</button>
                                                      '  
-                                            caption_class='anm-bot '>
+                                                    caption_class='anm-bot'>
                                             
-                    <div class='mt txt-center'>
-                        <br>
+                    <div class='mt p txt-center'>
                         <h3>With styled caption</h3>
                     </div>
                 </div>
 
-                <div class='slide  warn anm-left' caption='hoverable caption'  caption_class='show-onhover danger anm-left'>
-                    <div class='mc txt-center'>
+                <div class='slide  warn anm-left' caption='hoverable caption'  caption_class='show-onhover  anm-bot'>
+                    <div class='mc txt-center '>
                         <h3>hover me to show caption</h3>
                     </div>
                 </div>
 
                 <div class='slide  danger  anm-fadeout'>
-                    <div class='mc txt-center'><h3>simple styled fadeout animated slide</h3></div>
+                    <div class='mc txt-center'>
+                        <h3 class='color-white'>simple styled fadeout animated slide</h3>
+                    </div>
                 </div>
 
             </div>
@@ -405,7 +440,7 @@
     <div class=row>
     <div class='col'>   
             <p><h2>Tabs</h2></p>
-            <div class="tabs resp ">
+            <div class="tabs">
 
                 <input type="radio" name="tabs" id="tab1" checked="checked"><label for="tab1">First Tab</label>
                 <div class="tab">
@@ -484,8 +519,8 @@
         </div>
     </div> |
 
-    <div class='drop right opside' >
-        <label> Dropdown(opside)</label>
+    <div class='drop opside' >
+        <label> Dropdown(Right)</label>
         <div class='content'>
             this is drop down content ....
         </div>
@@ -538,17 +573,17 @@
                 <div class='row'>
                     <div class='col'>
                         <div class='row'>
-                            <div class=' 1 col'>
+                            <div class=' 1 col wrap'>
                             opacity <br>
-                            <img src="https://picsum.photos/200/200/" class="opc resp" style='width:60%' >
+                            <img src="https://picsum.photos/150/150/" class="opc thumb"  >
                             </div>
-                            <div class='1 col'>
+                            <div class='1 col wrap'>
                             grayscale <br>
-                            <img src="https://picsum.photos/200/200/" class="gscl resp" style='width:60%' >
+                            <img src="https://picsum.photos/150/150/" class="gscl thumb "  >
                             </div>
-                            <div class='1 col'>
+                            <div class='1 col wrap'>
                             sepia <br>
-                            <img src="https://picsum.photos/200/200/" class="spa resp" style='width:60%' >
+                            <img src="https://picsum.photos/150/150/" class="spa thumb"  >
                             </div>
                      </div>
                     </div>
@@ -557,17 +592,17 @@
                     <div class='col'>
                         hover on bellow images for effect
                         <div class='row'>
-                            <div class=' 1 col'>
+                            <div class=' 1 col wrap'>
                                 <!-- opacity on hover<br> -->
-                                <img src="https://picsum.photos/200/200/" class="opc-hov resp" style='width:60%' >
+                                <img src="https://picsum.photos/150/150/" class="opc-hov thumb">
                             </div>
-                            <div class='1 col'>
+                            <div class='1 col wrap'>
                                 <!-- grayscale  <br> -->
-                                <img src="https://picsum.photos/200/200/" class="gscl-hov resp" style='width:60%' >
+                                <img src="https://picsum.photos/150/150/" class="gscl-hov thumb">
                             </div>
-                            <div class='1 col'>
+                            <div class='1 col wrap'>
                                 <!-- sepia  on hover<br> -->
-                                <img src="https://picsum.photos/200/200/" class="spa-hov resp" style='width:60%' >
+                                <img src="https://picsum.photos/150/150/" class="spa-hov thumb">
                             </div>
                         </div>
                     </div>
@@ -584,26 +619,24 @@
     <p><h2>Modal/Sider/Toast</h2></p>
     <div>
         <button class='primary ' onclick='showModal("example_modal")'>Modal</button>
-        <!-- <button class='primary ' onclick='showModal("",{body:"dynamic content <br> ",title:"Title",size:"sm",effect:"anm-top"})'>Daynamic Modal</button> -->
-        <button class='primary ' onclick='showModal("",{body:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus scelerisque lorem elit, id ornare dui mattis nec. Phasellus luctus lorem et placerat ornare. Sed in vehicula dui, non feugiat magna. Aliquam et porttitor eros. Proin sit amet fermentum risus, et fringilla felis. Aliquam erat volutpat. Quisque a sapien odio. Vivamus in orci vitae nisl tempor scelerisque a in metus. Mauris nisl lorem, dignissim at leo ac, lobortis tristique tellus. Maecenas at tellus elit.Morbi libero elit, tincidunt et lorem vitae, suscipit posuere massa. Vivamus non nisl at augue molestie tincidunt at ac lorem. Aenean cursus nisi et posuere hendrerit. Etiam sollicitudin, ipsum sit amet venenatis egestas, dolor enim dapibus urna, a consectetur odio sapien pellentesque ante. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam sodales velit nec leo efficitur, vitae sagittis arcu varius. Duis ultricies magna vel leo ornare sodales hendrerit et mauris. Donec nec fermentum velit. Vivamus sollicitudin vitae magna ac tristique. Proin imperdiet, elit sit amet tristique commodo, lectus urna commodo nibh, ut aliquet massa dolor in mauris. Integer egestas libero non finibus consequat.Suspendisse egestas faucibus lacinia. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus ullamcorper fringilla ligula lobortis mattis. In elit lacus, sodales ut mauris sed, posuere interdum nunc. Proin id nisl sed lectus vulputate scelerisque ullamcorper ac dolor. Nullam sit amet augue sed magna iaculis convallis quis id nibh. Donec gravida non sapien id dictum. Duis mattis eu ex eget fermentum.Sed ac ipsum interdum, tempus sem eu, ornare erat. Vestibulum a lacus eget lectus mollis eleifend. Praesent tristique gravida egestas. Morbi id feugiat urna, nec tincidunt odio. Maecenas sit amet justo sem. Integer auctor odio sit amet urna accumsan imperdiet. Phasellus ullamcorper lacinia convallis. Phasellus convallis ipsum et efficitur feugiat. Integer gravida imperdiet nunc ac mollis. Suspendisse potenti. Mauris ornare egestas dignissim. Vestibulum suscipit tortor dignissim, vestibulum nisi quis, placerat metus. Praesent vel turpis viverra, molestie est at, molestie augue. Donec semper, nisl sed bibendum eleifend, felis nulla mattis arcu, ut dictum eros erat vitae orci.Donec bibendum dictum libero, at blandit urna tempus quis. Duis nibh nisi, hendrerit vitae posuere congue, condimentum eget turpis. Nam eget sodales sapien, dignissim eleifend nisi. Etiam et leo eros. Donec vestibulum, orci ac imperdiet hendrerit, lectus lorem malesuada nibh, vitae pulvinar eros mauris et nibh. Praesent egestas augue lorem, at elementum ipsum laoreet sed. Ut id lacinia risus.Maris ut justo id dolor porttitor dictum. Proin mollis suscipit erat pellentesque molestie. Mauris lacinia ut velit quis vehicula. Aliquam scelerisque mauris sit amet aliquet rutrum. Curabitur est nisl, pharetra dictum diam nec, laoreet eleifend mi. Mauris eleifend rhoncus aliquet. Curabitur id elit efficitur, mattis nunc venenatis, consectetur metus. Praesent lobortis tortor felis, volutpat rhoncus orci porta tincidunt. Mauris elementum urna auctor lacus lobortis pretium. Donec dignissim semper urna, nec maximus libero dignissim vitae. Morbi pulvinar elit sed quam dictum vulputate. Vestibulum semper est ut turpis mattis, eu fringilla nulla auctor.Nullam bibendum massa sit amet est aliquam lobortis. Suspendisse commodo, risus nec vestibulum dictum, mi enim gravida ipsum, egestas commodo ipsum arcu id nunc. Maecenas porta ultricies turpis sed ullamcorper. Nulla ac dolor dui. Integer et dolor non felis eleifend varius vitae eget neque. Nulla facilisi. Donec at tincidunt lorem. Nulla interdum ligula non eros facilisis, nec molestie diam accumsan. Sed id nunc a turpis vehicula viverra. Donec ut nulla quis lectus tincidunt venenatis eu et nunc. Aenean ullamcorper metus non tortor venenatis, eget interdum massa ullamcorper. Nam sed consequat odio. Sed porttitor augue sed nibh placerat, et maximus lacus varius. Integer et imperdiet lorem. Aenean fringilla vestibulum sapien nec tempus.Suspendisse nec ipsum nec odio lobortis placerat. Aliquam vel tempor leo. Mauris mattis luctus magna pharetra viverra. In non nibh erat. Sed vehicula nulla mauris, ornare vulputate mauris cursus sed. Duis vitae dapibus lorem. Ut in sapien elit. Nunc sit amet facilisis elit.",title:"Title",size:"full",effect:"anm-top"})'>Modal Full</button> 
-        <button class='primary ' onclick='showModal("",{type:"img",src:"https://picsum.photos/600/800?"+rand()})'>Modal image</button>
+        <button class='primary ' onclick='showModal("",{body:"dynamic content <br> ",title:"Title",size:"sm",effect:"anm-top"})'>Daynamic Modal</button>
+        <button class='primary ' onclick='showModal("",{size:"full",body:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus scelerisque lorem elit, id ornare dui mattis nec. Phasellus luctus lorem et placerat ornare. Sed in vehicula dui, non feugiat magna. Aliquam et porttitor eros. Proin sit amet fermentum risus, et fringilla felis. Aliquam erat volutpat. Quisque a sapien odio. Vivamus in orci vitae nisl tempor scelerisque a in metus. Mauris nisl lorem, dignissim at leo ac, lobortis tristique tellus. Maecenas at tellus elit.Morbi libero elit, tincidunt et lorem vitae, suscipit posuere massa. Vivamus non nisl at augue molestie tincidunt at ac lorem. Aenean cursus nisi et posuere hendrerit. Etiam sollicitudin, ipsum sit amet venenatis egestas, dolor enim dapibus urna, a consectetur odio sapien pellentesque ante. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam sodales velit nec leo efficitur, vitae sagittis arcu varius. Duis ultricies magna vel leo ornare sodales hendrerit et mauris. Donec nec fermentum velit. Vivamus sollicitudin vitae magna ac tristique. Proin imperdiet, elit sit amet tristique commodo, lectus urna commodo nibh, ut aliquet massa dolor in mauris. Integer egestas libero non finibus consequat.Suspendisse egestas faucibus lacinia. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus ullamcorper fringilla ligula lobortis mattis. In elit lacus, sodales ut mauris sed, posuere interdum nunc. Proin id nisl sed lectus vulputate scelerisque ullamcorper ac dolor. Nullam sit amet augue sed magna iaculis convallis quis id nibh. Donec gravida non sapien id dictum. Duis mattis eu ex eget fermentum.Sed ac ipsum interdum, tempus sem eu, ornare erat. Vestibulum a lacus eget lectus mollis eleifend. Praesent tristique gravida egestas. Morbi id feugiat urna, nec tincidunt odio. Maecenas sit amet justo sem. Integer auctor odio sit amet urna accumsan imperdiet. Phasellus ullamcorper lacinia convallis. Phasellus convallis ipsum et efficitur feugiat. Integer gravida imperdiet nunc ac mollis. Suspendisse potenti. Mauris ornare egestas dignissim. Vestibulum suscipit tortor dignissim, vestibulum nisi quis, placerat metus. Praesent vel turpis viverra, molestie est at, molestie augue. Donec semper, nisl sed bibendum eleifend, felis nulla mattis arcu, ut dictum eros erat vitae orci.Donec bibendum dictum libero, at blandit urna tempus quis. Duis nibh nisi, hendrerit vitae posuere congue, condimentum eget turpis. Nam eget sodales sapien, dignissim eleifend nisi. Etiam et leo eros. Donec vestibulum, orci ac imperdiet hendrerit, lectus lorem malesuada nibh, vitae pulvinar eros mauris et nibh. Praesent egestas augue lorem, at elementum ipsum laoreet sed. Ut id lacinia risus.Maris ut justo id dolor porttitor dictum. Proin mollis suscipit erat pellentesque molestie. Mauris lacinia ut velit quis vehicula. Aliquam scelerisque mauris sit amet aliquet rutrum. Curabitur est nisl, pharetra dictum diam nec, laoreet eleifend mi. Mauris eleifend rhoncus aliquet. Curabitur id elit efficitur, mattis nunc venenatis, consectetur metus. Praesent lobortis tortor felis, volutpat rhoncus orci porta tincidunt. Mauris elementum urna auctor lacus lobortis pretium. Donec dignissim semper urna, nec maximus libero dignissim vitae. Morbi pulvinar elit sed quam dictum vulputate. Vestibulum semper est ut turpis mattis, eu fringilla nulla auctor.Nullam bibendum massa sit amet est aliquam lobortis. Suspendisse commodo, risus nec vestibulum dictum, mi enim gravida ipsum, egestas commodo ipsum arcu id nunc. Maecenas porta ultricies turpis sed ullamcorper. Nulla ac dolor dui. Integer et dolor non felis eleifend varius vitae eget neque. Nulla facilisi. Donec at tincidunt lorem. Nulla interdum ligula non eros facilisis, nec molestie diam accumsan. Sed id nunc a turpis vehicula viverra. Donec ut nulla quis lectus tincidunt venenatis eu et nunc. Aenean ullamcorper metus non tortor venenatis, eget interdum massa ullamcorper. Nam sed consequat odio. Sed porttitor augue sed nibh placerat, et maximus lacus varius. Integer et imperdiet lorem. Aenean fringilla vestibulum sapien nec tempus.Suspendisse nec ipsum nec odio lobortis placerat. Aliquam vel tempor leo. Mauris mattis luctus magna pharetra viverra. In non nibh erat. Sed vehicula nulla mauris, ornare vulputate mauris cursus sed. Duis vitae dapibus lorem. Ut in sapien elit. Nunc sit amet facilisis elit.",title:"Title",effect:"anm-top"})'>Modal Full</button> 
+        <button class='primary ' onclick='showModal("",{type:"img",src:"https://picsum.photos/600/800?"})'>Modal image</button>
         <button class='primary ' onclick='showModal("",{type:"iframe",src:"https://www.youtube.com/embed/tgbNymZ7vqY?controls=0"})'>Youtube Video</button>
         <button class='succ' onclick="showSide('sider-example')">Sider</button> 
         <button class='succ' onclick="showSide('opsider-example')">Opposite Sider</button>
         <button class='warn' onclick="showToast('this is a <i>toast</i> with html content <br> <span class=danger>danger</span> <mark>mark</mark> <em>Italic</em> <strong>Strong<strong> ...')"> Toast </button> 
         <button class='warn' onclick="showToast('this is a <i>toast</i> <br>','2500','danger','br')"> Oppsite Toast  </button> 
-        </div>
+    </div>
     
-    <div class='overlay' id='example_modal'>
-        <div class='modal sm' >
-            <div class='content rounded'>
+    <div class='overlay ' id='example_modal'>
+        <div class='modal sm rounded anm-left '>
                 <a class='close'></a>
                 <div class='title'>Title</div>
                 <div class='body'>
                     modal body ...  <br>
                     <button onclick='closeSide("example_modal")'  >Close</button>
                 </div>
-            </div>
         </div>
     </div>
     
@@ -677,7 +710,7 @@
     </table>
 
     <br>
-    <center><b>Table (horizontal Scrollable)</b></center>
+    <center><strong class='font-heavy'>Table (horizontal Scrollable)</b></strong></center>
     <br>
     <div class='overflow-x'>
     <table class='w100' >
@@ -789,7 +822,7 @@
     </table>
 
     <p><h2>Form</h2></p>
-    <div class='form zebra'>   
+    <div class='form'>   
 
         <section>
             <label for="">Name:</label>
@@ -822,7 +855,7 @@
         </section>
 
         <section>
-            <label for="favs" class='top'>Favorites :</label>
+            <label for="favs">Favorites:</label>
             <div id='favs'> 
                 <input type='checkbox' name='rd1' value=1 >Reading  Newspaper <br>
                 <input type='checkbox' name='rd1' value=2>Watch TV <br>
@@ -831,7 +864,7 @@
         </section> 
 
         <section>
-            <label for='upld' class='top'>Upload:</label> 
+            <label for='upld'>Upload:</label> 
             <div id='upld'> 
                 <input id='file1' type="file" class='file' multiple>
                 <label for='file1'>choose a file ... </label> 
@@ -841,13 +874,13 @@
         </section>
 
         <section>
-            <label class='top'>Description:</label>
-            <div><textarea class='w100' rows=5 ></textarea></div> 
+            <label>Description:</label>
+            <div><textarea class='w100' rows=5 style='width:100% !important;'></textarea></div> 
         </section>
 
         <div class=right>
-        <a class='btn medium'>cancel</a>
-         <button>Submit</button>
+            <a class='btn'>Cancel</a>
+            <button>Submit</button>
         </div>
 
     </div>
@@ -892,6 +925,7 @@
                     <option>Man</option>
                     <option>Woman</option>
                 </select>
+                
                 
                 <select class='primary'>
                     <option>Primary</option>
