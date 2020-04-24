@@ -211,7 +211,7 @@
                     </ul>
                     
                 </div>
-                <div class='2 col'>
+                <div class='2 col '>
                    
                     <span class='color-info'>unstyled:</span> 
                     <ul class='list-unstyled'>
@@ -367,7 +367,7 @@
         <div class='col'>
             <div class='pos primary ' style='height:250px'>
                 <div class='mc txt-center color-white '>
-                    <h2 class="color-white">This is hero</h2>
+                    <h2 class="color-white" >This is hero</h2>
                     <h4 class='color-warn'>made by position area</h4>
                 </div>
             </div>
@@ -380,7 +380,7 @@
             <p><h2>Slides</h2></p>
             <div id='myslide' class='slides' delay='5000' style='height:300px'>
                 
-                <div class='slide anm-fadeout' caption='image slide caption'>
+                <div class='slide anm-fadeout' caption='image slide caption' caption_class='font-heavy  warn show-onhover anm-fadeout '>
                     <img src='https://picsum.photos/600/300'>
                 </div>
 
@@ -392,14 +392,14 @@
                                                      <span class="tag warn">Tag</span>
                                                      <button class="succ">Button</button>
                                                      '  
-                                                    caption_class='anm-bot'>
+                                                    caption_class='anm-bot dark'>
                                             
                     <div class='mt p txt-center'>
                         <h3>With styled caption</h3>
                     </div>
                 </div>
 
-                <div class='slide  warn anm-left' caption='hoverable caption'  caption_class='show-onhover  anm-bot'>
+                <div class='slide  warn anm-left' caption='hoverable caption'  caption_class='show-onhover light anm-bot'>
                     <div class='mc txt-center '>
                         <h3>hover me to show caption</h3>
                     </div>
@@ -517,7 +517,7 @@
             Why do we use it?
             It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
         </div>
-    </div> |
+    </div> 
 
     <div class='drop opside' >
         <label> Dropdown(Right)</label>
@@ -625,8 +625,8 @@
         <button class='primary ' onclick='showModal("",{type:"iframe",src:"https://www.youtube.com/embed/tgbNymZ7vqY?controls=0"})'>Youtube Video</button>
         <button class='succ' onclick="showSide('sider-example')">Sider</button> 
         <button class='succ' onclick="showSide('opsider-example')">Opposite Sider</button>
-        <button class='warn' onclick="showToast('this is a <i>toast</i> with html content <br> <span class=danger>danger</span> <mark>mark</mark> <em>Italic</em> <strong>Strong<strong> ...')"> Toast </button> 
-        <button class='warn' onclick="showToast('this is a <i>toast</i> <br>','2500','danger','br')"> Oppsite Toast  </button> 
+        <button class='warn' onclick="showToast('this is a <i>toast</i> with html content <span class=danger>danger</span> <mark>mark</mark> <em>Italic</em> <strong>Strong<strong> ...')"> Toast </button> 
+        <button class='warn' onclick="showToast('this is a <i>toast</i>','3500','danger','br')"> Oppsite Toast  </button> 
     </div>
     
     <div class='overlay ' id='example_modal'>
@@ -642,41 +642,55 @@
     
     <p><h2>Card</h2></p>
     <div class=row>
-        <div class='col'>
-            <div class='card' >
-                <h3>Card Title</h3>
-                <img src="https://via.placeholder.com/150" class='resp'>
-                <p>Here is some text that generally describes the card, or something about it.</p>
-                <button class="btn dim" >Okay</button>
-                <button class="btn primary">Cancel</button>
-            </div>
+        <div class='card col'>
+            <h3>Card Title</h3>
+            <img src="https://via.placeholder.com/150" class='resp'>
+            <p>Here is some text that generally describes the card, or something about it.</p>
+            <button class="btn dim" >Okay</button>
+            <button class="btn primary">Cancel</button>
         </div>
-        <div class='col'>
-            <div class='card' >
-                <h3>Card Title</h3>
-                <p>Here is some text that generally describes the card, or something about it.</p>
-                <button class="btn dim" >Okay</button>
-                <button class="btn primary">Cancel</button>
-                <img src="https://via.placeholder.com/150" class='resp mt'>
-            </div>
+        
+        <div class='card col' >
+            <a class='close' onclick='closeParent(this)'></a>
+            <h3>Card Title</h3>
+            <p>Here is some text that generally describes the card, or something about it.</p>
+            <button class="btn dim" >Okay</button>
+            <button class="btn primary">Cancel</button>
+            <img src="https://via.placeholder.com/150" class='resp mt'>
         </div>
-        <div class='col'>
-            <div class='card' >
-                
-                <button class="btn dim right" >Okay</button>
-                <button class="btn primary right">Cancel</button>
-                <img src="https://via.placeholder.com/150" class='resp mt'>
-                <h3>Card Title</h3>
-                <p>Here is some text that generally describes the card, or something about it.</p>
-            </div>
+        
+        <div class='card col'>
+            <button class="btn dim right" >Okay</button>
+            <button class="btn primary right">Cancel</button>
+            <img src="https://via.placeholder.com/150" class='resp mt'>
+            <h3>Card Title</h3>
+            <p>Here is some text that generally describes the card, or something about it.</p>
         </div>
         <div class='col' >
-            <div class='card  light '><p>Light Message with Card</p></div>
-            <div class='card  info '><p>Info Message with Card</p></div>
-            <div class='card  succ'><p>Succ Message with Card</p> </div>
-            <div class='card  warn'><p>Warn Message with Card</p> </div>
-            <div class='card  danger'><p>Danger Message with Card</p> </div>
-            <div class='card  dark'><p>Dark Message with Card</p> </div>
+            <div class='card  light '>
+                <a class='close' onclick='closeParent(this)'></a>
+                <p>Light Message with Card</p> 
+            </div>
+            <div class='card  info '>
+                <a class='close' onclick='closeParent(this)'></a>
+                <p>Info Message with Card</p>
+            </div>
+            <div class='card  succ'>
+                <a class='close' onclick='closeParent(this)'></a>
+                <p>Succ Message with Card</p> 
+            </div>
+            <div class='card  warn'>
+                <a class='close' onclick='closeParent(this)'></a>
+                <p>Warn Message with Card</p>
+             </div>
+            <div class='card  danger'>
+                <a class='close' onclick='closeParent(this)'></a>
+                <p>Danger Message with Card</p>
+            </div>
+            <div class='card  dark'>
+                <a class='close' onclick='closeParent(this)'></a>
+                <p>Dark Message with Card</p> 
+            </div>
         </div>
     </div>
    
