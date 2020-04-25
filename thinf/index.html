@@ -12,19 +12,12 @@
     <script src='https://cdn.jsdelivr.net/npm/prismjs@1.20.0/prism.js' data-manual></script>
     
     <style>
-
-        :root{
-            --default-font: lato ;
-        }
-
         p + h2 {
             background: rgb(212, 226, 252) ;
-            padding: .2em .3em;
             border-top:2px solid lightblue ;
         }
-
-
     </style>
+    
 </head>
 <body>
 
@@ -89,12 +82,11 @@
     <a href="index-rtl.html"  class='btn right'>RightToLeft</a>
     
     
-    <h2 class='p light'>
+    <h2 class='light'>
         thinf <br>
         <small>thin frontend framework </small><br>
     </h2>
-   
-
+    
     <p><h2>Navigation</h2></p> 
     <ul class="nav" >
         <li><a href="#">Nav Link</a></li>
@@ -167,12 +159,12 @@
                     <h6>H6</h6>
                 </div>
                 <div class='2 col wrap'>
-                    <h1> H1 <small>small ..</small> </h1>
-                    <h2> H2 <small>small ..</small> </h2>
-                    <h3> H3 <small>small ..</small> </h3>
-                    <h4> H4 <small>small ..</small> </h4>
-                    <h5> H5 <small>small ..</small> </h5>
-                    <h6> H6 <small>small ..</small> </h6>
+                    <h1> H1 <small>small</small> </h1>
+                    <h2> H2 <small>small</small> </h2>
+                    <h3> H3 <small>small</small> </h3>
+                    <h4> H4 <small>small</small> </h4>
+                    <h5> H5 <small>small</small> </h5>
+                    <h6> H6 <small>small</small> </h6>
               
                     
                 </div>
@@ -257,7 +249,7 @@
 
 
        
-        <div class='col thin-scroll' >
+        <div class='col' >
             
             <b>Blockquote :</b>
             <blockquote>
@@ -282,7 +274,7 @@
             <span class='tag danger'>Tag</span>
             <span class='tag dark'>Tag</span>
             <span class='tag light'>Tag</span>
-
+            
             <br><br>
             <p><b>colors :</b></p>
             <span class='color-primary'>primary </span> , 
@@ -293,27 +285,29 @@
             <span class='color-dark'>dark </span> , 
             <span class='color-light'>light </span> 
             
-            <br><p><b>code :</b>
-
-            </p>
-            <pre>
+            <br><p><b>code :</b></p>
+            
+            <pre style='width:320px'>
             <code class='prism language-js'>
-    var a = 1   
-    function jsfunc(a){
-        return a++
+      
+    function func1(param){
+        return param++
+    }
+    function func2(param){
+        return ++param
     }
 
-    console.log(a)        //return 1
-    console.log(jsfunc(a))  //return 2
-            </code>
+    var a = 1 
+    console.log(func1(a))  //return 1
+    console.log(func2(a))  //return 2     </code>
             </pre>
-                
+            
         </div>
     </div>
 
  
     <p><h2>Columns</h2></p>
-    Auto columns:
+    <h3>Auto columns:</h3>
     <div class='row bordered-cols '>
         <!-- <div></div> -->
             <div class='col' >col</div>
@@ -326,18 +320,32 @@
             <div class='col' >col</div>
             <div class='col' >col</div>
     </div>
-    <br>sized columns:
+    <h3>sized columns:</h3>
     <div class='row bordered-cols '>
         <div class='1 col'>1 col</div>
         <div class='2 col wrap'>2 col</div>
-        <div class='col mobile-hide'>col (Mobile Hide)</div>
+        <div class='col mobile-hide'>auto (Mobile Hide)</div>
         <div class='4 col'>4 col</div>
         <div class='2 col wrap'>2 col wrap</div>
         <div class='3 col'>3 col</div>
+        <div class=' col'>auto</div>
+        <div class='2 col'>2 col</div>
         <div class='6 col desktop-hide'>6 col (Desktop Hide)</div>
         <div class='2 col'>2 col</div>
-        <div class='3 col tablet-hide'>3 col (Table Hide)</div>
+        <div class='3 col tablet-hide'>3 col (Tablet Hide)</div>
         <div class='2 col'>2 col</div>
+    </div>
+
+    <h3>responsive classes:</h3> 
+    <div class='row bordered-cols '>
+        <div class='lg1 md2 sm3 col'>lg1 md2 sm3</div>
+        <div class='lg1 md2 sm3 col'>lg1 md2 sm3</div>
+        <div class='lg1 md2 sm3 col'>lg1 md2 sm3</div>
+        <div class='lg1 md2 sm3 col'>lg1 md2 sm3</div>
+        <div class='lg1 md2 sm3 col'>lg1 md2 sm3</div>
+        <div class='lg1 md2 sm3 col'>lg1 md2 sm3</div>
+        <div class='lg1 md2 sm3 col'>lg1 md2 sm3</div>
+        <div class='lg1 md2 sm3 col'>lg1 md2 sm3</div>
     </div>
 
     <p><h2>Position Area</h2></p>
@@ -366,7 +374,7 @@
         </div>
         <div class='col'>
             <div class='pos primary ' style='height:250px'>
-                <div class='mc txt-center color-white '>
+                <div class='mc txt-center color-white w100 ' >
                     <h2 class="color-white" >This is hero</h2>
                     <h4 class='color-warn'>made by position area</h4>
                 </div>
@@ -406,7 +414,7 @@
                 </div>
 
                 <div class='slide  danger  anm-fadeout'>
-                    <div class='mc txt-center'>
+                    <div class='mc txt-center' style='width:70%'>
                         <h3 class='color-white'>simple styled fadeout animated slide</h3>
                     </div>
                 </div>
@@ -462,12 +470,37 @@
                 </div>
 
             </div>
+
+            <p><h2>Tabs(as Accordion)</h2></p>
+
+            <div class="accordion tabs ">
+
+                <input type="radio" name="actabs" id="ac_tab1" checked="checked"><label for="ac_tab1">First Tab</label>
+                <div class="tab">
+                First Tab Content ...
+                </div>
+                
+                <input type="radio" name="actabs" id="ac_tab2"><label for="ac_tab2" >Second Tab</label>
+                <div class="tab">
+                Second Tab Content ...
+                </div>
+                
+                <input type="radio" name="actabs" id="ac_tab3" ><label for="ac_tab3">Third Tab</label>
+                <div class="tab">
+                Third Tab Content ...
+                </div>
+                <input type="radio" name="actabs" id="ac_tab4"><label for="ac_tab4" >Fourth Tab</label>
+                <div class="tab">
+                Fourth Tab Content ...
+                </div>
+
+            </div>
     </div> 
     <div class='col'>
         <p><h2>Collapsive Menu</h2></p>  
         <ul class="collapsibleList light">
             <li>
-            <input type="checkbox" id="node1"  name='colps1'/>
+            <input type="checkbox" id="node1"  name='colps1' checked/>
             <label for="node1">Click to open list 1</label>
             <ul>
             <li>Item 1</li>
@@ -484,7 +517,7 @@
             </ul>
             </li>
             <li>
-            <input type="checkbox" id="node2"  name='colps1' />
+            <input type="checkbox" id="node2"  name='colps1' checked/>
             <label for="node2">Click to open list 2</label>
             
             <ul>
@@ -544,74 +577,67 @@
 
     <p><h2>Images</h2></p>
     <div class='row pt'>
-            <div class='col'>
-                Avatars: <br>
-                    <img src="https://picsum.photos/50" class="circle">
-                    <img src="https://picsum.photos/80" class="circle ">
-                    <img src="https://picsum.photos/90" class="circle thumb">
-            </div>
-            <div class='col'>
-                thumb image <br>
-                <img src="https://via.placeholder.com/150" alt="" class='thumb  rounded '>
-            </div>
-            <div class='col'>
-                Figured 
-                <figure>
-                    <img src="https://via.placeholder.com/150" class="" >
-                    <figcaption>A caption for the above image.</figcaption>
-                    
-                </figure>
-            </div>
-            <div class='col'>
-                Responsive image
-                <img src="https://via.placeholder.com/150" class="resp" >
-            </div>
-
-            <div class='col'>
-                Effects: (Refresh page for changing picture)<br><br>
-
-                <div class='row'>
-                    <div class='col'>
-                        <div class='row'>
-                            <div class=' 1 col wrap'>
-                            opacity <br>
-                            <img src="https://picsum.photos/150/150/" class="opc thumb"  >
-                            </div>
-                            <div class='1 col wrap'>
-                            grayscale <br>
-                            <img src="https://picsum.photos/150/150/" class="gscl thumb "  >
-                            </div>
-                            <div class='1 col wrap'>
-                            sepia <br>
-                            <img src="https://picsum.photos/150/150/" class="spa thumb"  >
-                            </div>
-                     </div>
-                    </div>
+        <div class='6 col row '>
+            
+                <div class='1 col '>
+                    Avatars: <br>
+                        <img src="https://picsum.photos/50" class="circle">
+                        <img src="https://picsum.photos/80" class="circle ">
+                        <img src="https://picsum.photos/90" class="circle thumb">
                 </div>
-                 <div class='row'>    
-                    <div class='col'>
-                        hover on bellow images for effect
-                        <div class='row'>
-                            <div class=' 1 col wrap'>
-                                <!-- opacity on hover<br> -->
-                                <img src="https://picsum.photos/150/150/" class="opc-hov thumb">
-                            </div>
-                            <div class='1 col wrap'>
-                                <!-- grayscale  <br> -->
-                                <img src="https://picsum.photos/150/150/" class="gscl-hov thumb">
-                            </div>
-                            <div class='1 col wrap'>
-                                <!-- sepia  on hover<br> -->
-                                <img src="https://picsum.photos/150/150/" class="spa-hov thumb">
-                            </div>
-                        </div>
-                    </div>
-                    
-               </div>
+                <div class='1 col wrap'>
+                    thumb image <br>
+                    <img src="https://via.placeholder.com/150" alt="" class='thumb  rounded '>
+                </div>
+                <div class='1 col wrap'>
+                    Figured 
+                    <figure>
+                        <img src="https://via.placeholder.com/150" class="" >
+                        <figcaption>A caption for the above image.</figcaption>
+                        
+                    </figure>
+                </div>
 
-              
-
+                <div class=' col wrap'>
+                    Responsive image
+                    <img src="https://via.placeholder.com/150" class="resp" >
+                </div>
+        </div>
+        <div class='6 col row '>
+            
+            <div class='lg3 md6 sm6  col row  wrap '>
+                <div class='1 col wrap'>
+                    <img src="https://picsum.photos/150/150/" class="resp opc thumb"  > <br>
+                    opacity
+                </div>
+                <div class='1 col wrap '>
+                    <img src="https://picsum.photos/150/150/" class="resp gscl thumb "  > <br>
+                    gscale
+                </div>
+                <div class='1 col wrap'>
+                    <img src="https://picsum.photos/150/150/" class="resp spa thumb"  > <br>
+                    sepia
+                </div>
             </div>
+                    
+            <div class='lg3 md6 sm6 col row wrap '>    
+               
+                <div class='1 col wrap'>
+                    <img src="https://picsum.photos/150/150/" class="resp opc-hov thumb"> <br>
+                    hover opacity
+                </div>
+                <div class='1 col wrap'>
+                    <img src="https://picsum.photos/150/150/" class="resp gscl-hov thumb"> <br>
+                    hover gscale 
+                </div>
+                <div class='1 col wrap'>
+                    
+                    <img src="https://picsum.photos/150/150/" class="resp spa-hov thumb"> <br>
+                    hover sepia
+                </div>
+            </div>
+
+        </div>
             
     </div> 
 
