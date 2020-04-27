@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, maximum-scale=1initial-scale=1.0">
     <title>thinf(thin frontend framewrok) - demo</title>
     <link href="dist/thinf-rtl.css" rel="stylesheet">
     <script src='dist/thinf.js'></script>
@@ -19,7 +19,7 @@
     </style>
     
 </head>
-<body dir='rtl'>
+<body>
 
 <div class='container'>
     <div class='overlay' id='sider-example'>
@@ -108,7 +108,7 @@
         <li><a href="#">Nav Link</a></li>
         <li><a href="#">Nav Link</a></li>
         <li style='position:unset'>
-            <div class='drop full'>
+            <div class='drop full '>
                 <a href="#">Mega Menu</a>
                 <div class='content' style='overflow:0'>
                     <div class='row'>
@@ -148,9 +148,10 @@
     <div class='row '>
         <div class='col'>
          
-            <b>Heading:</b><br>
+           
             <div class='row'>
-                <div class='2 col'>
+                <div class='6 col'><h3>Heading:</h3></div>
+                <div class='2 col wrap'>
                     <h1>H1</h1>
                     <h2>H2</h2>
                     <h3>H3</h3>
@@ -165,26 +166,21 @@
                     <h4> H4 <small>small</small> </h4>
                     <h5> H5 <small>small</small> </h5>
                     <h6> H6 <small>small</small> </h6>
-              
-                    
                 </div>
-                
                 <div class='col wrap'>
+                    <h3>Font weight:</h3>
+                    <div class='p'> </div>
                     <h3 class='font-heavy'>font-heavy</h3>
                     <h3>font-regular</h3>
                     <h3 class='font-light'>font-light</h3>
                     <h3 class='font-lighter'>font-lighter</h3>
-                    
-                    
                 </div>
 
-               
             </div>
 
-            <p>
-                <b>List:</b>
-            </p>
+            
             <div class='row'>
+                <div class='6 col'><h3>Lists:</h3></div>
                 <div class='2 col'>
                     <!-- unstyled list -->
                     <span class='color-info'>styled :</span> 
@@ -250,8 +246,8 @@
 
        
         <div class='col' >
+            <h3>Blockquote:</h3>
             
-            <b>Blockquote :</b>
             <blockquote>
                 Listen: this world is the lunatic's sphere,
                 Don't always agree it's real,
@@ -264,8 +260,8 @@
                 <cite>Hafiz &lt;<a href="https://en.wikipedia.org/wiki/Hafiz">wiki</a>&gt;</cite>
             </blockquote>
     
-               
-            <p><b>Mark & Tag :</b></p>
+            <h3>Mark & Tag :</h3>
+           
             These are  <mark>Mark</mark> & 
             <span class='tag primary'>Tag</span>
             <span class='tag info'>Tag</span>
@@ -276,7 +272,7 @@
             <span class='tag light'>Tag</span>
             
             <br><br>
-            <p><b>colors :</b></p>
+            <h3>Colors :</h3>
             <span class='color-primary'>primary </span> , 
             <span class='color-succ'>succ </span> , 
             <span class='color-info'>info </span> , 
@@ -285,9 +281,10 @@
             <span class='color-dark'>dark </span> , 
             <span class='color-light'>light </span> 
             
-            <br><p><b>code :</b></p>
+            <br><br>
+            <h3>Code :</h3>
             
-            <pre style='width:320px;direction: ltr;'>
+            <pre>
             <code class='prism language-js'>
       
     function func1(param){
@@ -299,11 +296,13 @@
 
     var a = 1 
     console.log(func1(a))  //return 1
-    console.log(func2(a))  //return 2     </code>
-            </pre>
+    console.log(func2(a))  //return 2    
+         </code>
+          </pre>
             
         </div>
     </div>
+
 
  
     <p><h2>Columns</h2></p>
@@ -328,7 +327,7 @@
         <div class='4 col'>4 col</div>
         <div class='2 col wrap'>2 col wrap</div>
         <div class='3 col'>3 col</div>
-        <div class=' col'>auto</div>
+        <div class='col'>auto</div>
         <div class='2 col'>2 col</div>
         <div class='6 col desktop-hide'>6 col (Desktop Hide)</div>
         <div class='2 col'>2 col</div>
@@ -551,8 +550,8 @@
             It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
         </div>
     </div> 
-
-    <div class='drop opside' >
+    |
+    <div class='drop opside ' >
         <label> Dropdown(Right)</label>
         <div class='content'>
             this is drop down content ....
@@ -567,7 +566,7 @@
         </div>
     </div> | -->
   
-    <div class='drop click' >
+    <div class='drop click ' >
         <input type="text"  value='click me' style='z-index:100 !important'>
         <div class='content'>
             You create me after click ;)
