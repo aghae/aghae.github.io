@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, maximum-scale=1initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>thinf(thin frontend framewrok) - demo</title>
     <link href="dist/thinf-rtl.css" rel="stylesheet">
     <script src='dist/thinf.js'></script>
@@ -113,7 +113,7 @@
                 <div class='content' style='overflow:0'>
                     <div class='row'>
                         <div class='1 col p'>
-                            <img src="https://picsum.photos/150" class="rounded ">
+                            <img src="https://picsum.photos/150" class="rounded "> 
                         </div>  
                         <div class='col'> 
                                 <b>Item 1</b>
@@ -470,9 +470,11 @@
 
             </div>
 
-            <p><h2>Tabs(as Accordion)</h2></p>
+            <br>
+            <p><strong>Tabs as Accordion:</strong></p>
+            <br>
 
-            <div class="accordion tabs ">
+            <div class="accordion tabs " >
 
                 <input type="radio" name="actabs" id="ac_tab1" checked="checked"><label for="ac_tab1">First Tab</label>
                 <div class="tab">
@@ -534,13 +536,20 @@
     
     <p><h2>Dropdown</h2></p>
     
+    <div>
     <div class='drop'>
-        <label>dropdown</label>
+        <label>Dropdown</label>
         <div class='content'>
             this is drop down content <br>
-            ddd
         </div>
     </div> | 
+
+    <div class='drop up'>
+        <label>Dropdown(up)</label>
+        <div class='content'>
+            this is drop down content <br>
+        </div>
+    </div> |
 
     <div class='drop full' >
         <label>Dropdown(Full)</label> 
@@ -550,29 +559,49 @@
             It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
         </div>
     </div> 
-    |
-    <div class='drop opside ' >
+    
+    
+    <div class='drop opside '  style='float:right !important;'>
         <label> Dropdown(Right)</label>
         <div class='content'>
             this is drop down content ....
         </div>
-    </div> | 
+    </div> 
 
+    </div>
      
-    <!-- <div class='drop click' >
-        <input type='checkbox' id='lnkclk'><label for='lnkclk'> click me</label>
-        <div class='content'>
-            this is drop down content ....
-        </div>
-    </div> | -->
-  
-    <div class='drop click ' >
-        <input type="text"  value='click me' style='z-index:100 !important'>
+    <div class='drop' >
+        <label><button class='btn info'>hover me</button></label>
         <div class='content'>
             You create me after click ;)
         </div>
     </div> 
 
+    <div class='drop  click ' >
+        <input type="checkbox" id='btnclk'><label for="btnclk" class='btn info'>click me</label>
+        <div class='content full'>
+            You create me after click ;)
+        </div>
+    </div> 
+
+    <div class='drop click' >
+        <input type="text"  value='click me' >
+        <div class='content'>
+            You create me after click ;)
+        </div>
+    </div> 
+    <div>
+        <div class='drop  push click '  >
+            <input type="checkbox" id='pushbtn'> 
+            <label class='btn info' for="pushbtn"  >push content</label>
+            <div class='content' >
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                Why do we use it?
+               
+            </div>
+        </div> 
+        <br><br>
+    </div>
 
     <p><h2>Images</h2></p>
     <div class='row pt'>
@@ -580,9 +609,10 @@
             
                 <div class='1 col '>
                     Avatars: <br>
-                        <img src="https://picsum.photos/50" class="circle">
+                        <img src="https://picsum.photos/50" class="circle"> 
                         <img src="https://picsum.photos/80" class="circle ">
-                        <img src="https://picsum.photos/90" class="circle thumb">
+                        <img src="https://picsum.photos/90"  class="circle thumb mid" >
+                        
                 </div>
                 <div class='1 col wrap'>
                     thumb image <br>
@@ -648,8 +678,10 @@
         <button class='primary ' onclick='showModal("",{size:"full",body:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus scelerisque lorem elit, id ornare dui mattis nec. Phasellus luctus lorem et placerat ornare. Sed in vehicula dui, non feugiat magna. Aliquam et porttitor eros. Proin sit amet fermentum risus, et fringilla felis. Aliquam erat volutpat. Quisque a sapien odio. Vivamus in orci vitae nisl tempor scelerisque a in metus. Mauris nisl lorem, dignissim at leo ac, lobortis tristique tellus. Maecenas at tellus elit.Morbi libero elit, tincidunt et lorem vitae, suscipit posuere massa. Vivamus non nisl at augue molestie tincidunt at ac lorem. Aenean cursus nisi et posuere hendrerit. Etiam sollicitudin, ipsum sit amet venenatis egestas, dolor enim dapibus urna, a consectetur odio sapien pellentesque ante. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam sodales velit nec leo efficitur, vitae sagittis arcu varius. Duis ultricies magna vel leo ornare sodales hendrerit et mauris. Donec nec fermentum velit. Vivamus sollicitudin vitae magna ac tristique. Proin imperdiet, elit sit amet tristique commodo, lectus urna commodo nibh, ut aliquet massa dolor in mauris. Integer egestas libero non finibus consequat.Suspendisse egestas faucibus lacinia. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus ullamcorper fringilla ligula lobortis mattis. In elit lacus, sodales ut mauris sed, posuere interdum nunc. Proin id nisl sed lectus vulputate scelerisque ullamcorper ac dolor. Nullam sit amet augue sed magna iaculis convallis quis id nibh. Donec gravida non sapien id dictum. Duis mattis eu ex eget fermentum.Sed ac ipsum interdum, tempus sem eu, ornare erat. Vestibulum a lacus eget lectus mollis eleifend. Praesent tristique gravida egestas. Morbi id feugiat urna, nec tincidunt odio. Maecenas sit amet justo sem. Integer auctor odio sit amet urna accumsan imperdiet. Phasellus ullamcorper lacinia convallis. Phasellus convallis ipsum et efficitur feugiat. Integer gravida imperdiet nunc ac mollis. Suspendisse potenti. Mauris ornare egestas dignissim. Vestibulum suscipit tortor dignissim, vestibulum nisi quis, placerat metus. Praesent vel turpis viverra, molestie est at, molestie augue. Donec semper, nisl sed bibendum eleifend, felis nulla mattis arcu, ut dictum eros erat vitae orci.Donec bibendum dictum libero, at blandit urna tempus quis. Duis nibh nisi, hendrerit vitae posuere congue, condimentum eget turpis. Nam eget sodales sapien, dignissim eleifend nisi. Etiam et leo eros. Donec vestibulum, orci ac imperdiet hendrerit, lectus lorem malesuada nibh, vitae pulvinar eros mauris et nibh. Praesent egestas augue lorem, at elementum ipsum laoreet sed. Ut id lacinia risus.Maris ut justo id dolor porttitor dictum. Proin mollis suscipit erat pellentesque molestie. Mauris lacinia ut velit quis vehicula. Aliquam scelerisque mauris sit amet aliquet rutrum. Curabitur est nisl, pharetra dictum diam nec, laoreet eleifend mi. Mauris eleifend rhoncus aliquet. Curabitur id elit efficitur, mattis nunc venenatis, consectetur metus. Praesent lobortis tortor felis, volutpat rhoncus orci porta tincidunt. Mauris elementum urna auctor lacus lobortis pretium. Donec dignissim semper urna, nec maximus libero dignissim vitae. Morbi pulvinar elit sed quam dictum vulputate. Vestibulum semper est ut turpis mattis, eu fringilla nulla auctor.Nullam bibendum massa sit amet est aliquam lobortis. Suspendisse commodo, risus nec vestibulum dictum, mi enim gravida ipsum, egestas commodo ipsum arcu id nunc. Maecenas porta ultricies turpis sed ullamcorper. Nulla ac dolor dui. Integer et dolor non felis eleifend varius vitae eget neque. Nulla facilisi. Donec at tincidunt lorem. Nulla interdum ligula non eros facilisis, nec molestie diam accumsan. Sed id nunc a turpis vehicula viverra. Donec ut nulla quis lectus tincidunt venenatis eu et nunc. Aenean ullamcorper metus non tortor venenatis, eget interdum massa ullamcorper. Nam sed consequat odio. Sed porttitor augue sed nibh placerat, et maximus lacus varius. Integer et imperdiet lorem. Aenean fringilla vestibulum sapien nec tempus.Suspendisse nec ipsum nec odio lobortis placerat. Aliquam vel tempor leo. Mauris mattis luctus magna pharetra viverra. In non nibh erat. Sed vehicula nulla mauris, ornare vulputate mauris cursus sed. Duis vitae dapibus lorem. Ut in sapien elit. Nunc sit amet facilisis elit.",title:"Title",effect:"anm-top"})'>Modal Full</button> 
         <button class='primary ' onclick='showModal("",{type:"img",src:"https://picsum.photos/600/800?"})'>Modal image</button>
         <button class='primary ' onclick='showModal("",{type:"iframe",src:"https://www.youtube.com/embed/tgbNymZ7vqY?controls=0"})'>Youtube Video</button>
+        <br>
         <button class='succ' onclick="showSide('sider-example')">Sider</button> 
         <button class='succ' onclick="showSide('opsider-example')">Opposite Sider</button>
+        <br>
         <button class='warn' onclick="showToast('this is a <i>toast</i> with html content <span class=danger>danger</span> <mark>mark</mark> <em>Italic</em> <strong>Strong<strong> ...')"> Toast </button> 
         <button class='warn' onclick="showToast('this is a <i>toast</i>','3500','danger','br')"> Oppsite Toast  </button> 
     </div>
