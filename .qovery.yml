@@ -1,0 +1,15 @@
+---
+application:
+  name: "aghae"
+  project: "proj1"
+  organization: "QoveryCommunity"
+databases:
+- type: "MONGODB"
+  name: "projdb"
+  version: "4.4"
+routers:
+- name: "main-aghae"
+  routes:
+  - application_name: "aghae"
+    paths:
+    - "/*"
